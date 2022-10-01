@@ -18,8 +18,8 @@ const getJSON = async url => {
 };
 
 const getWeatherIcon = code => {
-  if (code < 10) return "☀️";
-  if (code < 25) return "🌤️";
+  if (code < 3) return "☀️";
+  if (code < 20) return "🌤️";
   if (code < 50) return "⛅";
   if (code < 60) return "🌦️";
   if (code < 70) return "🌧️";
