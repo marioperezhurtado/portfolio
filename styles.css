@@ -1,12 +1,15 @@
 body {
   font-family: monospace;
+  background-color: #3b3b3b;
 }
-
+a {
+  color: inherit;
+}
 .content {
   margin: 5rem 10%;
+  color: #fff;
 }
-
-h1 {
+.content h1 {
   display: block;
   width: 19ch;
   animation: typing 3s steps(19), blink 0.5s infinite step-end alternate;
@@ -17,7 +20,6 @@ h1 {
   font-weight: 300;
   white-space: nowrap;
 }
-
 @keyframes typing {
   from {
     width: 0;
