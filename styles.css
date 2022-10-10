@@ -6,12 +6,13 @@ a {
   color: inherit;
 }
 li {
-  margin-bottom: 0.5rem;
+  padding: 0.7rem;
 }
 .content {
   margin: 5rem 10%;
   color: #fff;
 }
+/* Typing effect */
 .content h1 {
   display: block;
   width: 19ch;
