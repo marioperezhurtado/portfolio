@@ -1,0 +1,48 @@
+---
+import Header from '../layouts/Header.astro'
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Mario Pérez Hurtado | Portfolio</title>
+    <meta
+      name="description"
+      content="Hi, I'm Mario Pérez Hurtado, Web Developer. I like building things."
+    />
+  </head>
+  <body class="bg-pf-dark text-pf-light font-body">
+    <Header />
+    <main class="max-w-screen-xl mx-auto w-full px-10 mt-24">
+      <div class="text-7xl font-bold">
+        <h1 class="">Hi, I'm Mario,</h1>
+        <h2 class="text-pf-accent flex items-center gap-4">
+          Web Developer
+          <img
+            src="/emojis/waving-hand.webp"
+            alt="waving hand emoji"
+            width="56px"
+            height="56px"
+            class="w-14 h-14"
+          />
+        </h2>
+      </div>
+      <div class="mt-10 text-lg flex gap-4 items-center">
+        <a
+          href="#about"
+          class="bg-pf-dark-2 text-pf-light-2 py-1.5 px-4 rounded-md">
+          About me
+        </a>
+        <a class="bg-pf-dark-2 text-pf-light-2 py-1.5 px-4 rounded-md">
+          Contact
+        </a>
+      </div>
+    </main>
+  </body>
+</html>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700&display=swap');
+</style>
