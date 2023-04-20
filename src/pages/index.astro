@@ -1,5 +1,6 @@
 ---
-import Header from '../layouts/Header.astro'
+import Header from '../layout/Header.astro'
+import Badges from '../layout/Badges.astro'
 ---
 
 <html lang="en">
@@ -13,36 +14,56 @@ import Header from '../layouts/Header.astro'
       content="Hi, I'm Mario Pérez Hurtado, Web Developer. I like building things."
     />
   </head>
-  <body class="bg-pf-dark text-pf-light font-body">
+  <body class="bg-pf-dark text-pf-light font-sans">
     <Header />
     <main class="max-w-screen-xl mx-auto w-full px-10 mt-24">
-      <div class="text-7xl font-bold">
-        <h1 class="">Hi, I'm Mario,</h1>
-        <h2 class="text-pf-accent flex items-center gap-4">
-          Web Developer
-          <img
-            src="/emojis/waving-hand.webp"
-            alt="waving hand emoji"
-            width="56px"
-            height="56px"
-            class="w-14 h-14"
-          />
-        </h2>
-      </div>
-      <div class="mt-10 text-lg flex gap-4 items-center">
-        <a
-          href="#about"
-          class="bg-pf-dark-2 text-pf-light-2 py-1.5 px-4 rounded-md">
-          About me
-        </a>
-        <a class="bg-pf-dark-2 text-pf-light-2 py-1.5 px-4 rounded-md">
-          Contact
-        </a>
-      </div>
+      <section class="flex gap-4 justify-between mb-72">
+        <div>
+          <div class="text-7xl font-bold">
+            <h1 class="">Hi, I'm Mario,</h1>
+            <h2 class="text-pf-accent">
+              Web Developer
+              <img
+                src="/emojis/waving-hand.webp"
+                alt="waving hand emoji"
+                width="56px"
+                height="56px"
+                class="w-14 h-14 inline"
+              />
+            </h2>
+          </div>
+          <div class="mt-10 text-lg flex gap-4 items-center">
+            <a
+              href="#about"
+              class="py-1.5 bg-pf-dark-2 hover:bg-pf-dark-3 text-pf-light-2 px-4 rounded-md transition">
+              About me
+            </a>
+            <a
+              href="#"
+              class="py-1.5 px-4 bg-pf-dark-2 hover:bg-pf-dark-3 text-pf-light-2 rounded-md transition">
+              Contact
+            </a>
+          </div>
+        </div>
+        <Badges />
+      </section>
+      <section class="mb-72">
+        <h2 class="text-6xl mb-16">I like building things</h2>
+        <div class="text-pf-light-2 text-2xl max-w-4xl">
+          <p class="w-full mb-10">The best way to learn is by doing. 👨‍💻</p>
+          <p class="w-full">
+            {
+              "That's why I'm constantly working on different projects, whether it's building a simple demo to learn something new, or creating a complex web application that excites me."
+            }
+          </p>
+        </div>
+        <p class="text-3xl mt-16">These are some of those <i>things</i></p>
+      </section>
     </main>
   </body>
 </html>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 </style>

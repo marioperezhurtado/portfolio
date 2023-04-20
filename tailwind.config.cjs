@@ -9,12 +9,14 @@ module.exports = {
       colors: {
         'pf-dark': '#222430',
         'pf-dark-2': '#393B4E',
+        'pf-dark-3': '#4b4e69',
         'pf-light': '#E4E5EA',
         'pf-light-2': '#B0B0B0',
         'pf-accent': '#16CA73'
       },
       fontFamily: {
-        sans: ['Syne', ...defaultTheme.fontFamily.sans]
+        sans: ['Syne', ...defaultTheme.fontFamily.sans],
+        body: ['Inter', ...defaultTheme.fontFamily.sans]
       }
     }
   },
