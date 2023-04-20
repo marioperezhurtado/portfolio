@@ -1,0 +1,44 @@
+---
+import Highlighted from '../components/Highlighted.astro'
+import Tool from '../components/Tool.astro'
+---
+
+<section class="mb-72">
+  <h2 class="text-6xl font-bold mb-16">Tools of the trade</h2>
+  <div class="text-pf-light-2 max-w-4xl text-xl">
+    <p class="mb-10">
+      Your tools are a reflection of your commitment to your craft. 🛠️
+    </p>
+    <p>
+      These are some of the technologies I use to build websites and web apps.
+      However, I approach my learning with an <Highlighted text="open mind" /> and
+      am always looking to learn new things, and keep improving my skills.
+    </p>
+  </div>
+  <ul class="mt-20 flex gap-8 overflow-x-auto pb-8">
+    <li>
+      <Tool
+        title="I like building beautiful interfaces."
+        tools={['CSS', 'SCSS', 'TailwindCSS']}
+      />
+    </li>
+    <li>
+      <Tool
+        title="I like building seamless interactivity and great user experiences."
+        tools={['React', 'NextJS', 'Svelte']}
+      />
+    </li>
+    <li>
+      <Tool
+        title="I consider it important to master the tools that will make you produce more value in the long run."
+        tools={['Git', 'GitHub', 'Testing(Jest, Vitest)']}
+      />
+    </li>
+    <li>
+      <Tool
+        title="I've also enjoyed doing things beyond the client in order to build things."
+        tools={['SQL', 'NodeJS', 'tRPC', 'Prisma']}
+      />
+    </li>
+  </ul>
+</section>

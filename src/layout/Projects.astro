@@ -1,0 +1,58 @@
+---
+import Highlighted from '../components/Highlighted.astro'
+import Project from '../components/Project.astro'
+---
+
+<section class="mb-72">
+  <h2 class="text-6xl mb-16 font-bold">I like building things</h2>
+  <div class="text-pf-light-2 text-2xl max-w-4xl">
+    <p class="w-full mb-10">The best way to learn is by doing. 👨‍💻</p>
+    <p class="w-full">
+      That's why I'm constantly working on different projects, whether it's
+      building a simple demo to learn something new, or creating a complex web
+      application that excites me.
+    </p>
+  </div>
+  <p class="text-3xl mt-20">
+    These are some of those <Highlighted text="things" /> I've built
+  </p>
+  <ul class="my-16 gap-20 flex flex-col">
+    <li>
+      <Project
+        title="DevForum"
+        description="Web forum focused on programming-related topics."
+        features="Create posts, topics and communities, comments and replies, upvote/downvote sytem, code snippets with syntax highlighting in multiple languages."
+        image="safl"
+        url="https://devforum.dev"
+        tech={['Next.js', 'TypeScript', 'TailwindCSS', 'tRPC', 'Prisma']}
+      />
+    </li>
+    <li>
+      <Project
+        title="Barbería HB"
+        description="Website for a local barbershop in Crevillente, Alicante, Spain."
+        features="Landing page with some interactive details, such as instagram-like stories, a product slider and animations. Internationalization (currently ES/EN)."
+        image="safl"
+        url="https://devforum.dev"
+        tech={['Astro', 'TypeScript', 'TailwindCSS', 'Svelte']}
+      />
+    </li>
+    <li>
+      <Project
+        title="BOBLE"
+        description="Online free web chat."
+        features="Private chats, group chats, share text messages, images, GIFs, and audio recordings in real-time. Internationalization (ES/EN/FR)."
+        image="safl"
+        url="https://devforum.dev"
+        tech={['React', 'TypeScript', 'TailwindCSS', 'Supabase']}
+      />
+    </li>
+  </ul>
+  <a
+    href="https://github.com/marioperezhurtado"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="py-1.5 px-4 text-lg bg-pf-dark-2 rounded-md hover:bg-pf-dark-3 text-pf-light-2 block w-fit mx-auto transition"
+    >See all projects</a
+  >
+</section>
