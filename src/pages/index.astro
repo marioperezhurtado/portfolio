@@ -8,7 +8,7 @@ import Education from '../layout/Education.astro'
 import Contact from '../layout/Contact.astro'
 ---
 
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -36,8 +36,35 @@ import Contact from '../layout/Contact.astro'
       </svg>
       <Projects />
       <About />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+        class="absolute top-[3250px] left-0 w-screen">
+        <path
+          fill="transparent"
+          fill-opacity="1"
+          stroke="#393B4E"
+          stroke-width="2"
+          stroke-dasharray="10 5"
+          stroke-dashoffset="0"
+          d="M0,160 C80,130 160,117 240,105 C320,93 400,83 560,97 C720,111 880,149 1040,160 C1200,171 1280,149 1360,122.7 C1400,109.3 1440,96 1440,96"
+        ></path>
+      </svg>
+
       <Tools />
       <Education />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+        class="absolute top-[5070px] left-0 w-screen">
+        <path
+          d="M0,160 C480,400 960,-100 1440,160"
+          fill="transparent"
+          stroke="#393B4E"
+          stroke-width="2"
+          stroke-dasharray="10 5"
+          stroke-dashoffset="0"></path>
+      </svg>
       <Contact />
     </main>
     <footer class="bg-pf-dark-2 w-full p-8 text-center">

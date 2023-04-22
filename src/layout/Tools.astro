@@ -1,6 +1,6 @@
 ---
 import Highlighted from '../components/Highlighted.astro'
-import Tool from '../components/Tool.astro'
+import Tools from '../components/Tools.svelte'
 ---
 
 <section class="mb-72">
@@ -15,7 +15,8 @@ import Tool from '../components/Tool.astro'
       am always looking to learn new things, and keep improving my skills.
     </p>
   </div>
-  <ul class="mt-20 flex gap-8 overflow-x-auto pb-8">
+  <Tools client:visible />
+  <!-- <ul class="mt-20 flex gap-8 overflow-x-auto pb-8">
     <li>
       <Tool
         title="I like building beautiful interfaces."
@@ -40,5 +41,5 @@ import Tool from '../components/Tool.astro'
         tools={['SQL', 'NodeJS', 'tRPC', 'Prisma']}
       />
     </li>
-  </ul>
+  </ul> -->
 </section>
