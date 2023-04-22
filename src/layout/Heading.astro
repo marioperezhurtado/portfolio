@@ -2,18 +2,19 @@
 import Badges from '../layout/Badges.astro'
 ---
 
-<section class="flex gap-4 justify-between mb-72">
+<section class="flex gap-4 justify-between mb-52 lg:mb-72">
   <div>
-    <div class="text-7xl font-bold mb-10">
+    <div class="text-6xl lg:text-7xl font-bold mb-5 lg:mb-10">
       <h1 class="">Hi, I'm Mario,</h1>
       <h2 class="text-pf-accent">
-        Web Developer <span class="text-5xl">👋</span>
+        Web Developer
+        <span class="text-5xl hidden lg:inline-block" id="hand">👋</span>
       </h2>
     </div>
     <p class="text-xl text-pf-light-2">
-      I'm a passionate front-end developer based in Spain.
+      Passionate front-end developer based in Spain.
     </p>
-    <div class="mt-10 text-lg flex gap-4 items-center">
+    <div class="mt-5 lg:mt-10 text-lg flex gap-4 items-center">
       <a
         href="#about"
         class="py-1.5 bg-pf-dark-2 hover:bg-pf-dark-3 text-pf-light-2 px-4 rounded-md transition">
@@ -28,3 +29,37 @@ import Badges from '../layout/Badges.astro'
   </div>
   <Badges />
 </section>
+
+<style>
+  #hand {
+    animation: waving-hand 2.5s infinite;
+    transform-origin: 70% 70%;
+  }
+
+  @keyframes waving-hand {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(14deg);
+    } /* The following five values can be played with to make the waving more or less extreme */
+    20% {
+      transform: rotate(-8deg);
+    }
+    30% {
+      transform: rotate(14deg);
+    }
+    40% {
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    60% {
+      transform: rotate(0deg);
+    }
+    Reset for the last half to pause 100% {
+      transform: rotate(0deg);
+    }
+  }
+</style>

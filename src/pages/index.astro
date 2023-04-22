@@ -19,10 +19,21 @@ import Contact from '../layout/Contact.astro'
       content="Hi, I'm Mario Pérez Hurtado, Web Developer. I like building things."
     />
   </head>
-  <body class="bg-pf-dark text-pf-light font-sans">
+  <body class="bg-pf-dark text-pf-light font-sans overflow-x-hidden">
     <Header />
     <main class="max-w-screen-xl mx-auto w-full px-10 mt-24">
       <Heading />
+      <svg viewBox="0 0 1440 320" class="absolute top-[500px] left-0 w-screen">
+        <path
+          id="path"
+          fill="transparent"
+          fill-opacity="1"
+          d="M0,96L120,96C240,96,480,96,720,128C960,160,1200,224,1320,256L1440,288"
+          stroke="#393B4E"
+          stroke-width="2"
+          stroke-dasharray="10 5"
+          stroke-dashoffset="0"></path>
+      </svg>
       <Projects />
       <About />
       <Tools />
