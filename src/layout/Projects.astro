@@ -3,25 +3,27 @@ import Highlighted from '../components/Highlighted.astro'
 import Project from '../components/Project.astro'
 ---
 
-<section class="mb-72 px-10 max-w-screen-xl mx-auto">
-  <h2 class="text-5xl lg:text-6xl mb-16 font-bold">I like building things</h2>
-  <div class="text-pf-light-2 text-2xl max-w-4xl">
-    <p class="w-full mb-10">The best way to learn is by doing. 👨‍💻</p>
+<section class="mb-28 sm:mb-52 lg:mb-72">
+  <h2 class="text-2xl sm:text-5xl lg:text-6xl mb-8 sm:mb-16 font-bold">
+    I like building things
+  </h2>
+  <div class="text-pf-light-2 text-xl lg:text-2xl max-w-4xl">
+    <p class="w-full mb-5 sm:mb-10">The best way to learn is by doing. 👨‍💻</p>
     <p class="w-full">
       That's why I'm constantly working on different projects, whether it's
       building a simple demo to learn something new, or creating a complex web
       application that excites me.
     </p>
   </div>
-  <p class="text-3xl mt-20">
+  <p class="text-xl lg:text-3xl mt-10 sm:mt-20">
     These are some of those <Highlighted text="things" /> I've built
   </p>
-  <ul class="my-16 gap-20 flex flex-col">
+  <ul class="my-10 sm:my-16 gap-10 sm:gap-20 flex flex-col">
     <li>
       <Project
         title="DevForum"
         description="Web forum focused on programming-related topics."
-        features="Create posts, topics and communities, comments and replies, upvote/downvote sytem, code snippets with syntax highlighting in multiple languages."
+        features="Create posts, topics and communities, comments and replies, upvote system, code snippets with syntax highlighting in multiple languages."
         image="/projects/devforum.png"
         url="https://devforum.dev"
         tech={['Next.js', 'TypeScript', 'TailwindCSS', 'tRPC', 'Prisma']}
@@ -52,7 +54,7 @@ import Project from '../components/Project.astro'
     href="https://github.com/marioperezhurtado"
     target="_blank"
     rel="noopener noreferrer"
-    class="py-1.5 px-4 text-lg bg-pf-dark-2 rounded-md hover:bg-pf-dark-3 text-pf-light-2 block w-fit mx-auto transition"
-    >See all projects</a
-  >
+    class="py-1.5 px-4 text-sm sm:text-lg bg-pf-dark-2 rounded-md hover:bg-pf-dark-3 text-pf-light-2 block w-fit mx-auto transition shadow-md"
+    >See all projects
+  </a>
 </section>

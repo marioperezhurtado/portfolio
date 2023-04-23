@@ -19,7 +19,7 @@
   on:mouseleave={() => (isScrolling = false)}
   on:mousemove={handleScroll}
   bind:this={toolList}
-  class="mt-20 flex gap-8 overflow-x-auto pb-8 select-none cursor-pointer"
+  class="mt-10 sm:mt-20 flex gap-8 items-center overflow-x-auto pb-8 select-none cursor-pointer"
 >
   <li>
     <Tool

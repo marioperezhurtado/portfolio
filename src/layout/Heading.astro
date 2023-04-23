@@ -2,27 +2,32 @@
 import Badges from '../layout/Badges.astro'
 ---
 
-<section class="flex gap-4 justify-between mb-52 lg:mb-72">
+<section
+  class="flex gap-4 justify-between mb-28 sm:mb-52 lg:mb-72 flex-col md:flex-row gap-y-10">
   <div>
-    <div class="text-6xl lg:text-7xl font-bold mb-5 lg:mb-10">
-      <h1 class="">Hi, I'm Mario,</h1>
+    <div
+      class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-5 lg:mb-10">
+      <h1>Hi, I'm Mario,</h1>
       <h2 class="text-pf-accent">
         Web Developer
-        <span class="text-5xl hidden lg:inline-block" id="hand">👋</span>
+        <span class="text-4xl xl:text-5xl hidden lg:inline-block" id="hand"
+          >👋</span
+        >
       </h2>
     </div>
-    <p class="text-xl text-pf-light-2">
+    <p class="text-lg sm:text-xl text-pf-light-2">
       Passionate front-end developer based in Spain.
     </p>
-    <div class="mt-5 lg:mt-10 text-lg flex gap-4 items-center">
+    <div
+      class="mt-5 lg:mt-10 text-sm sm:text-lg flex gap-2 sm:gap-4 items-center">
       <a
         href="#about"
-        class="py-1.5 bg-pf-dark-2 hover:bg-pf-dark-3 text-pf-light-2 px-4 rounded-md transition">
+        class="py-1.5 bg-pf-dark-2 hover:bg-pf-dark-3 text-pf-light-2 px-4 rounded-md transition shadow-md">
         About me
       </a>
       <a
         href="#contact"
-        class="py-1.5 px-4 bg-pf-dark-2 hover:bg-pf-dark-3 text-pf-light-2 rounded-md transition">
+        class="py-1.5 px-4 bg-pf-dark-2 hover:bg-pf-dark-3 text-pf-light-2 rounded-md transition shadow-md">
         Contact
       </a>
     </div>

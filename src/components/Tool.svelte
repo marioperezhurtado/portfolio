@@ -1,13 +1,15 @@
 <script lang="ts">
   export let title: string
   export let tools: string[]
+
+  //
 </script>
 
 <div
-  class="bg-pf-dark-2 w-96 aspect-video p-6 flex flex-col justify-between rounded-md"
+  class="bg-pf-dark-2 h-48 sm:h-56 aspect-video p-4 sm:p-6 flex flex-col justify-between rounded-md shadow-md"
 >
-  <p class="text-xl font-bold">{title}</p>
-  <p class="text-pf-light-2 text-xl">
+  <p class="text-lg sm:text-xl font-bold">{title}</p>
+  <p class="text-pf-light-2 sm:text-xl mt-5">
     {#each tools as t, i}
       {i === tools.length - 1 ? `${t}.` : `${t}, `}
     {/each}
