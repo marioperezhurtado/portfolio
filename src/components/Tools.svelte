@@ -41,7 +41,7 @@
   </li>
   <li>
     <Tool
-      title="I've also enjoyed doing things beyond the client in order to build things."
+      title="I've also enjoyed doing things beyond the client in order to build stuff."
       tools={['SQL', 'NodeJS', 'tRPC', 'Prisma']}
     />
   </li>
