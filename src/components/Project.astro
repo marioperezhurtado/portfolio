@@ -43,10 +43,10 @@ const { title, description, features, image, url, tech } = Astro.props
   </div>
 
   <div>
-    <h2 class="text-xl sm:text-2xl">{title}</h2>
+    <h2 class="text-xl sm:text-2xl mb-4 sm:mb-8">{title}</h2>
     <div class="text-pf-light-2 sm:text-xl max-w-screen-md">
-      <p class="mb-4 sm:mb-8">{description}</p>
-      <p class="mb-4 sm:mb-8">{features}</p>
+      <p class="mb-4">{description}</p>
+      <p class="mb-4">{features}</p>
       <p>
         {tech.map((t, i) => (i === tech.length - 1 ? `${t}.` : `${t}, `))}
       </p>
