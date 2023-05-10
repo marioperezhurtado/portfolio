@@ -36,7 +36,7 @@
   <li>
     <Tool
       title="I consider it important to master the tools that will make you produce more value in the long run."
-      tools={['Git', 'GitHub', 'Testing(Jest, Vitest)']}
+      tools={['Git', 'GitHub', 'Testing']}
     />
   </li>
   <li>
