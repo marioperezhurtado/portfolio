@@ -1,97 +1,14 @@
 ---
-import Header from '../layout/Header.astro'
-import Projects from '../layout/Projects.astro'
-import About from '../layout/About.astro'
-import Heading from '../layout/Heading.astro'
-import Tools from '../layout/Tools.astro'
-import Education from '../layout/Education.astro'
-import Contact from '../layout/Contact.astro'
+import RootLayout from '../layout/RootLayout.astro'
+import Projects from './_components/Projects.astro'
+import Heading from './_components/Heading.astro'
+import Tech from './_components/Tech.astro'
 ---
 
-<html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.png" type="image/png" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Mario Pérez Hurtado | Portfolio</title>
-    <meta
-      name="description"
-      content="Mario Pérez Hurtado, Web Developer. Passionate front-end developer based in Spain. I like building things."
-    />
-    <meta name="author" content="Mario Pérez Hurtado" />
-    <meta property="og:title" content="Mario Pérez Hurtado | Portfolio" />
-    <meta
-      property="og:description"
-      content="Mario Pérez Hurtado, Web Developer. Passionate front-end developer based in Spain. I like building things."
-    />
-    <meta property="site_name" content="marioph.com" />
-    <meta property="og:url" content="https://www.marioph.com" />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:image"
-      content="https://www.marioph.com/social-image.webp"
-    />
-    <link rel="canonical" href="https://www.marioph.com" />
-  </head>
-  <body class="bg-pf-dark text-pf-light font-body overflow-x-hidden">
-    <Header />
-    <main class="mx-auto w-full mt-10 sm:mt-24">
-      <Heading />
-      <Projects />
-      <Tools />
-      <About />
-      <Education />
-      <Contact />
-    </main>
-    <footer class="bg-pf-dark-2 w-full p-8 text-center text-sm sm:text-base">
-      <p>Made with 💚 by <span class="font-bold">Mario Pérez Hurtado</span></p>
-    </footer>
-  </body>
-</html>
-
-<style is:global>
-  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
-
-  /* Webkit-based browsers */
-  ::-webkit-scrollbar {
-    width: 12px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background-color: #393b4e;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: #4b4e69;
-    border-radius: 6px;
-  }
-
-  /* Firefox */
-  ::-moz-scrollbar {
-    width: 12px;
-  }
-
-  ::-moz-scrollbar-track {
-    background-color: #393b4e;
-  }
-
-  ::-moz-scrollbar-thumb {
-    background-color: #4b4e69;
-    border-radius: 6px;
-  }
-
-  /* Edge */
-  ::-ms-scrollbar {
-    width: 12px;
-  }
-
-  ::-ms-scrollbar-track {
-    background-color: #393b4e;
-  }
-
-  ::-ms-scrollbar-thumb {
-    background-color: #4b4e69;
-    border-radius: 6px;
-  }
-</style>
+<RootLayout>
+  <main class="mx-auto w-full mt-20">
+    <Heading />
+    <Projects />
+    <Tech />
+  </main>
+</RootLayout>

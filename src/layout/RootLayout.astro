@@ -1,0 +1,106 @@
+---
+import Footer from '../layout/Footer.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+
+import '@fontsource/inter'
+import '@fontsource/syne'
+
+export interface Props {
+  title?: string
+  description?: string
+  image?: string
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+
+const {
+  title = SITE_TITLE,
+  description = SITE_DESCRIPTION,
+  image = '/social-image.webp'
+} = Astro.props
+---
+
+<html lang="en" class="scroll-smooth">
+  <head>
+    <!-- Global Metadata -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="author" content="Mario Pérez Hurtado" />
+    <meta property="site_name" content="marioph.com" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+  </head>
+  <body
+    class="bg-pf-dark text-pf-light-2 font-body overflow-x-hidden min-h-screen">
+    <slot />
+    <Footer />
+    <style is:global>
+      /* Webkit-based browsers */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: #393b4e;
+        border-radius: 6px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #4b4e69;
+        border-radius: 6px;
+      }
+
+      /* Firefox */
+      ::-moz-scrollbar {
+        width: 12px;
+      }
+
+      ::-moz-scrollbar-track {
+        background-color: #393b4e;
+        border-radius: 6px;
+      }
+
+      ::-moz-scrollbar-thumb {
+        background-color: #4b4e69;
+        border-radius: 6px;
+      }
+
+      /* Edge */
+      ::-ms-scrollbar {
+        width: 12px;
+      }
+
+      ::-ms-scrollbar-track {
+        background-color: #393b4e;
+        border-radius: 6px;
+      }
+
+      ::-ms-scrollbar-thumb {
+        background-color: #4b4e69;
+        border-radius: 6px;
+      }
+    </style>
+  </body>
+</html>

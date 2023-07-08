@@ -1,25 +1,21 @@
 ---
-import Badges from '../layout/Badges.astro'
+import Badges from './Badges.astro'
 ---
 
 <section
-  class="flex gap-4 justify-between mb-28 sm:mb-52 lg:mb-72 flex-col md:flex-row gap-y-10 px-5 sm:px-10 max-w-screen-xl mx-auto">
+  class="flex gap-4 justify-between mb-28 flex-col md:flex-row gap-y-10 px-5 sm:px-10 max-w-screen-lg mx-auto">
   <div>
-    <div
-      class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-5 lg:mb-10 font-sans">
+    <div class="text-4xl sm:text-5xl font-bold mb-5 font-display text-pf-light">
       <h1>Hi, I'm Mario,</h1>
       <h1 class="text-pf-accent">
         Web Developer
-        <span class="text-4xl xl:text-5xl hidden lg:inline-block" id="hand"
-          >👋</span
-        >
+        <span class="text-4xl hidden lg:inline-block pl-2" id="hand">👋</span>
       </h1>
     </div>
-    <p class="text-lg sm:text-xl lg:text-2xl text-pf-light-2">
-      Passionate front-end developer based in Spain.
+    <p class="text-lg sm:text-xl text-pf-light-2">
+      Frontend Developer & Tech Enthusiast.
     </p>
-    <div
-      class="mt-5 lg:mt-10 text-sm sm:text-lg flex gap-2 sm:gap-4 items-center">
+    <div class="mt-5 text-sm sm:text-lg flex gap-2 sm:gap-4 items-center">
       <a
         href="/CV_Mario_Pérez_Hurtado.pdf"
         target="_blank"
@@ -31,11 +27,6 @@ import Badges from '../layout/Badges.astro'
           class="w-4 h-4 sm:w-5 sm:h-5"
         />
         Download CV
-      </a>
-      <a
-        href="#contact"
-        class="py-1.5 px-4 bg-pf-dark-2 hover:bg-pf-dark-3 text-pf-light-2 rounded-md transition shadow-md">
-        Contact
       </a>
     </div>
   </div>

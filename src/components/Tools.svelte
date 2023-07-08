@@ -19,7 +19,7 @@
   on:mouseleave={() => (isScrolling = false)}
   on:mousemove={handleScroll}
   bind:this={toolList}
-  class="mt-10 sm:mt-20 flex gap-8 items-center overflow-x-auto pb-8 select-none cursor-pointer"
+  class="mt-10 flex gap-8 items-center overflow-x-auto pb-8 select-none cursor-pointer"
 >
   <li>
     <Tool
@@ -35,14 +35,14 @@
   </li>
   <li>
     <Tool
-      title="I consider it important to master the tools that will make you produce more value in the long run."
-      tools={['Git', 'GitHub', 'Testing']}
+      title="I deeply care about producing reliable and maintainable code."
+      tools={['Testing', 'Git', 'Tooling']}
     />
   </li>
   <li>
     <Tool
       title="I've also enjoyed doing things beyond the client in order to build stuff."
-      tools={['SQL', 'NodeJS', 'tRPC', 'Prisma']}
+      tools={['SQL', 'Prisma', 'tRPC', 'Rust']}
     />
   </li>
 </ul>

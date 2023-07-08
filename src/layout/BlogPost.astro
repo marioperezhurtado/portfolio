@@ -1,0 +1,19 @@
+---
+import RootLayout from './RootLayout.astro'
+
+import type { CollectionEntry } from 'astro:content'
+type Props = CollectionEntry<'blog'>['data']
+
+const { title, description } = Astro.props
+---
+
+<RootLayout title={title} description={description}>
+	<main>
+		<article class="max-w-[70ch] mx-auto">
+			<a href="/">← Back</a>
+			<h1 class="title">{title}</h1>
+			<hr />
+			<slot />
+		</article>
+	</main>
+</RootLayout>
