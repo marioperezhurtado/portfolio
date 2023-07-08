@@ -1,14 +1,16 @@
 ---
 import RootLayout from '../layout/RootLayout.astro'
-import Projects from './_components/Projects.astro'
 import Heading from './_components/Heading.astro'
+import Projects from './_components/Projects.astro'
+import Blog from './_components/Blog.astro'
 import Tech from './_components/Tech.astro'
 ---
 
 <RootLayout>
-  <main class="mx-auto w-full mt-20">
+  <main class="mx-auto w-full mt-10 md:mt-20">
     <Heading />
     <Projects />
+    <Blog />
     <Tech />
   </main>
 </RootLayout>

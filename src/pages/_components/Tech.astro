@@ -7,7 +7,7 @@ import Tools from '../../components/Tools.svelte'
   <h2 class="text-2xl sm:text-4xl font-bold mb-4 font-display text-pf-light">
     Tools of the trade
   </h2>
-  <div class="text-pf-light-2 text-lg">
+  <div class="text-pf-light-2 sm:text-lg">
     <p class="mb-5">
       Your tools are a reflection of your commitment to your craft. 🛠️
     </p>
@@ -16,10 +16,10 @@ import Tools from '../../components/Tools.svelte'
       However, I approach my learning with an <Highlighted text="open mind" /> and
       am always looking to learn new things and keep improving my skills.
     </p>
-    <cite
-      class="text-base border-l-4 bg-pf-dark-2 rounded-sm p-2 pr-2.5 border-pf-dark-3"
-      >- "Strong opinions, loosely held"</cite
-    >
+    <blockquote
+      class="text-base border-l-4 bg-pf-dark-2 rounded-sm p-2 pr-3 border-pf-dark-3 w-fit">
+      - "Strong opinions, loosely held"
+    </blockquote>
   </div>
   <Tools client:visible />
 </section>
