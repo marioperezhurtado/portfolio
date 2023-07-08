@@ -54,7 +54,9 @@ const {
   </head>
   <body
     class="bg-pf-dark text-pf-light-2 font-body overflow-x-hidden min-h-screen">
-    <slot />
+    <div class="px-5 sm:px-10">
+      <slot />
+    </div>
     <Footer />
     <style is:global>
       /* remove tap highlight on mobile */
