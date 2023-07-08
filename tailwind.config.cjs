@@ -12,7 +12,7 @@ module.exports = {
         'pf-dark-3': '#4b4e69',
         'pf-light': '#e4e5ea',
         'pf-light-2': '#cacaca',
-        'pf-accent': '#16Ca73'
+        'pf-accent': '#16ca73'
       },
       fontFamily: {
         display: ['Syne', ...defaultTheme.fontFamily.sans],

@@ -1,13 +1,14 @@
 ---
 import { getCollection } from 'astro:content'
 import Link from '../../components/ui/Link.astro'
+import FormattedDate from '../../components/FormattedDate.astro'
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 )
 ---
 
-<section class="mb-16 sm:mb-28 px-5 sm:px-10 max-w-screen-lg mx-auto">
+<section class="mb-16 sm:mb-28 max-w-screen-lg mx-auto">
   <h2
     class="text-2xl sm:text-4xl mb-2 sm:mb-4 font-bold font-display text-pf-light">
     Blog Posts
@@ -25,11 +26,7 @@ const posts = (await getCollection('blog')).sort(
             {post.data.title}
           </a>
           <p class="text-sm mb-1">
-            {post.data.pubDate.toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric'
-            })}
+            <FormattedDate date={post.data.pubDate} />
           </p>
           <p class="max-w-lg">{post.data.description}</p>
         </li>

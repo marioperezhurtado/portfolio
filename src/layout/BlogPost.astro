@@ -1,19 +1,81 @@
 ---
 import RootLayout from './RootLayout.astro'
+import FormatedDate from '../components/FormattedDate.astro'
 
 import type { CollectionEntry } from 'astro:content'
 type Props = CollectionEntry<'blog'>['data']
 
-const { title, description } = Astro.props
+const { title, description, pubDate } = Astro.props
 ---
 
 <RootLayout title={title} description={description}>
-	<main>
+	<main class="my-10">
 		<article class="max-w-[70ch] mx-auto">
-			<a href="/">← Back</a>
-			<h1 class="title">{title}</h1>
-			<hr />
+			<a href="/blog" class="mb-10 block w-fit underline">← Back</a>
+			<h1 class="font-display text-pf-light font-extrabold text-3xl">
+				{title}
+			</h1>
+			<span class="text-sm mt-2">
+				<FormatedDate date={pubDate} />
+			</span>
+			<hr class="h-px mt-4 mb-8 bg-pf-dark-3 border-0" />
 			<slot />
 		</article>
 	</main>
+
+	<style is:inline>
+		p {
+			line-height: 1.5;
+			padding-bottom: 1rem;
+		}
+		strong {
+			color: #e4e5ea;
+		}
+		h3 {
+			color: #e4e5ea;
+			font-size: 1.25rem;
+			font-weight: 800;
+			font-family: 'Syne';
+			margin: 2rem 0 1rem;
+		}
+		code {
+			background-color: #393b4e;
+			padding: 0.1rem 0.3rem;
+			border-radius: 3px;
+			box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+				0 2px 4px -2px rgb(0 0 0 / 0.1);
+		}
+		pre {
+			padding: 1rem;
+			margin: 1rem 0 3rem;
+			border-radius: 6px;
+			box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+				0 2px 4px -2px rgb(0 0 0 / 0.1);
+		}
+		pre > code {
+			all: unset;
+		}
+		blockquote {
+			margin: 1rem 0 3rem;
+			padding: 1rem;
+			font-size: 15px;
+			border-radius: 3px;
+			border-left: 4px solid #4b4e69;
+			background-color: #393b4e;
+			color: #e4e5ea;
+			font-style: italic;
+		}
+		blockquote p {
+			padding: 0;
+		}
+		a {
+			color: #e4e5ea;
+			text-decoration: underline;
+			transition: color 300ms;
+			text-underline-offset: 2px;
+		}
+		a:hover {
+			color: #16ca73;
+		}
+	</style>
 </RootLayout>
