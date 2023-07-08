@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content'
+import Link from '../../components/ui/Link.astro'
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -8,20 +9,18 @@ const posts = (await getCollection('blog')).sort(
 
 <section class="mb-16 sm:mb-28 px-5 sm:px-10 max-w-screen-lg mx-auto">
   <h2
-    class="text-2xl sm:text-4xl mb-2 sm:mb-6 font-bold font-display text-pf-light">
+    class="text-2xl sm:text-4xl mb-2 sm:mb-4 font-bold font-display text-pf-light">
     Blog Posts
   </h2>
   <p class="w-full text-lg">
     Sometimes I write about stuff I find interesting. 📝
   </p>
-  <ul class="mt-8 sm:mt-10 mb-5 sm:mb-8 flex flex-col gap-5">
+  <ul class="mt-6 sm:mt-10 mb-5 sm:mb-8 flex flex-col gap-5">
     {
       posts.map((post) => (
         <li class="max-w-screen-sm">
           <a
             href={`/blog/${post.slug}`}
-            target="_blank"
-            rel="noopener noreferrer"
             class="text-lg sm:text-xl font-display text-pf-light font-bold underline underline-offset-4 decoration-2 decoration-pf-dark-3 hover:decoration-pf-light-2 transition">
             {post.data.title}
           </a>
@@ -37,11 +36,5 @@ const posts = (await getCollection('blog')).sort(
       ))
     }
   </ul>
-  <a
-    href="https://github.com/marioperezhurtado"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="pt-2 pb-1.5 px-4 text-sm bg-pf-dark-2 rounded-md hover:bg-pf-dark-3 text-pf-light-2 block w-fit transition shadow-md font-semibold"
-    >All posts
-  </a>
+  <Link href="/blog" arrow>All posts</Link>
 </section>

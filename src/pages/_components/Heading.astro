@@ -1,12 +1,13 @@
 ---
 import Badges from './Badges.astro'
+import Link from '../../components/ui/Link.astro'
 ---
 
 <section
   class="flex gap-4 justify-between mb-20 sm:mb-28 flex-col md:flex-row gap-y-10 px-5 sm:px-10 max-w-screen-lg mx-auto">
   <div>
     <div class="text-3xl xs:text-5xl font-bold mb-5 font-display text-pf-light">
-      <h1>Hi, I'm Mario</h1>
+      <h1>Hi, I'm Mario,</h1>
       <h1 class="text-pf-accent">
         Web Developer
         <span class="text-2xl sm:text-4xl inline-block pl-2" id="hand">👋</span>
@@ -16,54 +17,54 @@ import Badges from './Badges.astro'
       Frontend Developer & Tech Enthusiast.
     </p>
     <div class="mt-5 w-fit">
-      <a
+      <Link
         href="/CV_Mario_Pérez_Hurtado.pdf"
         target="_blank"
         rel="noopener noreferrer"
-        class="py-1.5 bg-pf-dark-2 hover:bg-pf-dark-3 text-pf-light-2 px-4 rounded-md transition shadow-md flex gap-2 items-center pl-3">
+        class="flex gap-2">
         <img
           src="/icons/download.svg"
           alt="Download CV Mario Pérez Hurtado"
-          class="w-4 h-4 sm:w-5 sm:h-5"
+          class="h-4"
         />
         Download CV
-      </a>
+      </Link>
     </div>
   </div>
   <Badges />
+
+  <style>
+    #hand {
+      animation: waving-hand 2.5s infinite;
+      transform-origin: 70% 70%;
+    }
+
+    @keyframes waving-hand {
+      0% {
+        transform: rotate(0deg);
+      }
+      10% {
+        transform: rotate(14deg);
+      } /* The following five values can be played with to make the waving more or less extreme */
+      20% {
+        transform: rotate(-8deg);
+      }
+      30% {
+        transform: rotate(14deg);
+      }
+      40% {
+        transform: rotate(-4deg);
+      }
+      50% {
+        transform: rotate(10deg);
+      }
+      60% {
+        transform: rotate(0deg);
+      }
+      /*Reset for the last half to pause 100%*/
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+  </style>
 </section>
-
-<style>
-  #hand {
-    animation: waving-hand 2.5s infinite;
-    transform-origin: 70% 70%;
-  }
-
-  @keyframes waving-hand {
-    0% {
-      transform: rotate(0deg);
-    }
-    10% {
-      transform: rotate(14deg);
-    } /* The following five values can be played with to make the waving more or less extreme */
-    20% {
-      transform: rotate(-8deg);
-    }
-    30% {
-      transform: rotate(14deg);
-    }
-    40% {
-      transform: rotate(-4deg);
-    }
-    50% {
-      transform: rotate(10deg);
-    }
-    60% {
-      transform: rotate(0deg);
-    }
-    /*Reset for the last half to pause 100%*/
-    100% {
-      transform: rotate(0deg);
-    }
-  }
-</style>
