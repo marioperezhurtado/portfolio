@@ -36,7 +36,7 @@
   <li>
     <Tool
       title="I deeply care about producing reliable and maintainable code."
-      tools={['Testing', 'Git', 'Tooling']}
+      tools={['TypeScript', 'Testing', 'Git']}
     />
   </li>
   <li>
