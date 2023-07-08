@@ -1,0 +1,56 @@
+---
+import Project from '../../components/Project.astro'
+---
+
+<div class="relative">
+  <svg
+    viewBox="0 0 1440 320"
+    preserveAspectRatio="none"
+    class="absolute -top-40 left-0 w-screen h-42 md:h-60 lg:h-80">
+    <path
+      id="path"
+      fill="transparent"
+      fill-opacity="1"
+      d="M0,96L120,96C240,96,480,96,720,128C960,160,1200,224,1320,256L1440,288"
+      stroke="#393B4E"
+      stroke-width="2"
+      stroke-dasharray="10 5"
+      stroke-dashoffset="0"></path>
+  </svg>
+  <section class="mb-28 px-5 sm:px-10 max-w-screen-lg mx-auto">
+    <h2 class="text-2xl sm:text-4xl mb-6 font-bold font-display text-pf-light">
+      I like building things
+    </h2>
+    <p class="w-full text-lg">The best way to learn is by doing. 👨‍💻</p>
+    <ul class="mt-10 mb-8 grid grid-cols-3">
+      <li>
+        <Project
+          title="DevForum"
+          description="Web forum focused on programming topics."
+          url="https://devforum.dev"
+        />
+      </li>
+      <li>
+        <Project
+          title="Barbería HB"
+          description="Website for a local barbershop in Crevillente."
+          url="https://barberiahb.com"
+        />
+      </li>
+      <li>
+        <Project
+          title="BOBLE"
+          description="Online free web chat."
+          url="https://chat.marioph.com"
+        />
+      </li>
+    </ul>
+    <a
+      href="https://github.com/marioperezhurtado"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="pt-2 pb-1.5 px-4 text-sm bg-pf-dark-2 rounded-md hover:bg-pf-dark-3 text-pf-light-2 block w-fit transition shadow-md font-semibold"
+      >More projects
+    </a>
+  </section>
+</div>

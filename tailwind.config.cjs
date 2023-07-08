@@ -8,14 +8,14 @@ module.exports = {
     extend: {
       colors: {
         'pf-dark': '#222430',
-        'pf-dark-2': '#393B4E',
+        'pf-dark-2': '#393b4e',
         'pf-dark-3': '#4b4e69',
-        'pf-light': '#E4E5EA',
-        'pf-light-2': '#B0B0B0',
-        'pf-accent': '#16CA73'
+        'pf-light': '#e4e5ea',
+        'pf-light-2': '#cacaca',
+        'pf-accent': '#16Ca73'
       },
       fontFamily: {
-        sans: ['Syne', ...defaultTheme.fontFamily.sans],
+        display: ['Syne', ...defaultTheme.fontFamily.sans],
         body: ['Inter', ...defaultTheme.fontFamily.sans]
       }
     }
