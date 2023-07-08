@@ -17,6 +17,9 @@ module.exports = {
       fontFamily: {
         display: ['Syne', ...defaultTheme.fontFamily.sans],
         body: ['Inter', ...defaultTheme.fontFamily.sans]
+      },
+      screens: {
+        xs: '475px'
       }
     }
   },

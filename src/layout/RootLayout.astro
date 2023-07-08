@@ -57,46 +57,43 @@ const {
     <slot />
     <Footer />
     <style is:global>
+      /* remove tap highlight on mobile */
+      * {
+        -webkit-tap-highlight-color: transparent;
+      }
+
       /* Webkit-based browsers */
       ::-webkit-scrollbar {
         width: 12px;
       }
-
       ::-webkit-scrollbar-track {
         background-color: #393b4e;
-        border-radius: 6px;
+        border-radius: 3px;
       }
-
       ::-webkit-scrollbar-thumb {
         background-color: #4b4e69;
-        border-radius: 6px;
+        border-radius: 3px;
       }
-
       /* Firefox */
       ::-moz-scrollbar {
         width: 12px;
       }
-
       ::-moz-scrollbar-track {
         background-color: #393b4e;
-        border-radius: 6px;
+        border-radius: 3px;
       }
-
       ::-moz-scrollbar-thumb {
         background-color: #4b4e69;
-        border-radius: 6px;
+        border-radius: 3px;
       }
-
       /* Edge */
       ::-ms-scrollbar {
         width: 12px;
       }
-
       ::-ms-scrollbar-track {
         background-color: #393b4e;
-        border-radius: 6px;
+        border-radius: 3px;
       }
-
       ::-ms-scrollbar-thumb {
         background-color: #4b4e69;
         border-radius: 6px;

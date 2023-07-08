@@ -1,8 +1,7 @@
 ---
-title: 'Markdown Style Guide'
-description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
+title: 'But Why Tailwind Though?'
+description: 'Tailwind is taking the web development world by storm. But why?'
 pubDate: 'Jul 01 2022'
-heroImage: '/placeholder-hero.jpg'
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
