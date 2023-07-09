@@ -2,6 +2,7 @@
 title: 'Rust Is Really Cool'
 description: "A brief introduction to Rust's most interesting language features."
 pubDate: 'Jul 07 2023'
+image: '/blog/rust-is-really-cool.webp'
 ---
 
 As a frontend/fullstack TypeScript developer, I wanted to explore a completely different language, stepping out of my comfort zone and exploring new ways of doing things.
@@ -10,7 +11,7 @@ Rust’s selling point for a large group of people is its performance, but I was
 
 I am far from being an expert in Rust, but I would like to discuss the topics that have caught my interest the most, changing my perspective on software development.
 
-### Inmutability By Default
+## Inmutability By Default
 
 In Rust, variables are immutable by default. To declare a variable as mutable, you must use the `mut` keyword. Functions also need to declare if they intend to mutate their arguments.
 
@@ -30,7 +31,7 @@ fizz.push(10)  // ✗
 buzz.push(20)  // ✔
 ```
 
-### Pattern Matching
+## Pattern Matching
 
 Rust's _pattern matching_ syntax is a powerful tool for handling complex data types and writing robust and expressive code.
 
@@ -124,7 +125,7 @@ For more information about this error, try `rustc --explain E0004`.
 error: could not compile `advent-of-code-2022` (bin "advent-of-code-2022") due to previous error
 ```
 
-### Error Handling Done Right
+## Error Handling Done Right
 
 Rust treats errors as values. Instead of _throwing_ and error and hoping that some function above will _catch_ it, if your code can produce an error, the compiler requires you to handle it or explicitly pass it to the next function. `Result` is an enum that can be either `Ok` or `Err`. Each variant represents the success or failure of the operation, with its resulting value.
 
@@ -187,7 +188,7 @@ try {
 // who is responsible for handling?
 ```
 
-### Null References: The Billion Dollar Mistake
+## Null References: The Billion Dollar Mistake
 
 The problem with _null values_ is that if you try to use a null value as a not-null value, you will get an error of some kind. Because this null or not-null property is pervasive, it’s extremely easy to make this kind of error.
 
@@ -227,7 +228,7 @@ fn main() {
 }
 ```
 
-### Rust Compiler Teaches You
+## Rust Compiler Teaches You
 
 Learning Rust can be challenging. At first, understanding concepts such as the _ownership model, string types, generics, traits, lifetimes, macros_, and complying with the strict and authoritative rules of the language, can be overwhelming. However, one thing that made my learning journey easier was to learn from the compiler errors.
 
@@ -252,17 +253,17 @@ For more information about this error, try `rustc --explain E0502`.
 error: could not compile `ownership` due to previous error
 ```
 
-### Conclusion
+## Conclusion
 
-Learning Rust can be challenging, but it's worth the effort. Rust is a strict language with a steep learning curve; however, this design choice helps developers understand its complexity early on and avoid bugs in the future. Keep this in mind before starting to learn Rust.
+Rust is _unfamiliar_, and can be tough to learn, but it's worth the effort. It is a strict language with a steep learning curve; however, this design choice helps developers understand its complexity early on and avoid bugs in the future. Keep this in mind before starting to learn Rust.
 
-All the topics we have discussed, and many more advanced features that I have yet to learn, make Rust a robust, elegant, and powerful language. Although I will probably not use it at work, I have found it a very enjoyable language. It has changed my view on software development and how things can be done in many different ways, and most importantly, it has been **really fun**.🦀
+All the topics we have discussed, and many more advanced features that I have yet to learn, make Rust a robust, elegant, and powerful language. Although I will probably not use it at work, I have found it a very enjoyable language. It has changed my view on software development and how things can be done, and most importantly, it has been **really fun**.🦀
 
-### Other Resources
+## Other Resources
 
 Most of the code examples are taken from the Rust Book, and other cool resources.
 
-- [The Rust Programming Book](https://doc.rust-lang.org/book/)
+- [The Rust Programming Language](https://doc.rust-lang.org/book/)
 - [How to Learn Rust](https://www.youtube.com/watch?v=2hXNd6x9sZs&ab_channel=NoBoilerplate)
 - [Rust Enums Are Better](https://www.youtube.com/watch?v=Epwlk4B90vk&ab_channel=ThePrimeagen)
 - [Rust: Not Just Zoom Zoom Fast](https://www.nexxel.dev/blog/rust)

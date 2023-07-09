@@ -1,6 +1,5 @@
 ---
 import { getCollection } from 'astro:content'
-import Link from '../../components/ui/Link.astro'
 import FormattedDate from '../../components/FormattedDate.astro'
 
 const posts = (await getCollection('blog')).sort(
@@ -10,7 +9,7 @@ const posts = (await getCollection('blog')).sort(
 
 <section class="mb-16 sm:mb-28 max-w-screen-lg mx-auto">
   <h2
-    class="text-2xl sm:text-4xl mb-2 sm:mb-4 font-bold font-display text-pf-light">
+    class="text-2xl sm:text-3xl mb-2 sm:mb-4 font-bold font-display text-pf-light">
     Blog Posts
   </h2>
   <p class="w-full text-lg">
@@ -33,5 +32,4 @@ const posts = (await getCollection('blog')).sort(
       ))
     }
   </ul>
-  <Link href="/blog" arrow>All posts</Link>
 </section>
