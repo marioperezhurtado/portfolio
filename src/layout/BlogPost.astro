@@ -5,14 +5,18 @@ import FormatedDate from '../components/FormattedDate.astro'
 import type { CollectionEntry } from 'astro:content'
 type Props = CollectionEntry<'blog'>['data']
 
-const { title, description, pubDate } = Astro.props
+const { title, description, pubDate, image } = Astro.props
 ---
 
-<RootLayout title={title} description={description}>
+<RootLayout
+	title={`${title} • Mario Pérez Hurtado`}
+	description={description}
+	image={image}>
 	<main class="my-10">
 		<article class="max-w-[70ch] mx-auto">
-			<a href="/blog" class="mb-10 block w-fit underline">← Back</a>
-			<h1 class="font-display text-pf-light font-extrabold text-3xl">
+			<a href="/" class="mb-10 block w-fit underline">← Back</a>
+			<h1
+				class="font-display text-pf-light font-extrabold text-2xl sm:text-3xl">
 				{title}
 			</h1>
 			<span class="text-sm mt-2">
@@ -31,7 +35,7 @@ const { title, description, pubDate } = Astro.props
 		strong {
 			color: #e4e5ea;
 		}
-		h3 {
+		h2 {
 			color: #e4e5ea;
 			font-size: 1.25rem;
 			font-weight: 800;
@@ -54,6 +58,7 @@ const { title, description, pubDate } = Astro.props
 		}
 		pre > code {
 			all: unset;
+			font-size: 14px;
 		}
 		blockquote {
 			margin: 1rem 0 3rem;

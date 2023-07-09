@@ -13,7 +13,8 @@ const blog = defineCollection({
     updatedDate: z
       .string()
       .optional()
-      .transform((str) => (str ? new Date(str) : undefined))
+      .transform((str) => (str ? new Date(str) : undefined)),
+    image: z.string()
   })
 })
 
