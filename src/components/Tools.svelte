@@ -30,7 +30,7 @@
   <li>
     <Tool
       title="I like building seamless interactivity and great user experiences."
-      tools={['React', 'NextJS', 'Svelte']}
+      tools={['React', 'Next.js', 'Svelte']}
     />
   </li>
   <li>
