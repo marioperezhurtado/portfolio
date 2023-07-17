@@ -7,7 +7,7 @@ const posts = (await getCollection('blog')).sort(
 )
 ---
 
-<section class="mb-16 sm:mb-28 max-w-screen-lg mx-auto">
+<section class="mb-16 sm:mb-28">
   <h2
     class="text-2xl sm:text-3xl mb-2 sm:mb-4 font-bold font-display text-pf-light">
     Blog Posts
@@ -25,7 +25,7 @@ const posts = (await getCollection('blog')).sort(
           <p class="text-sm mb-1">
             <FormattedDate date={post.data.pubDate} />
           </p>
-          <p class="max-w-lg">{post.data.description}</p>
+          <p class="max-w-prose">{post.data.description}</p>
         </li>
       ))
     }

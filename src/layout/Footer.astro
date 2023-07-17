@@ -1,6 +1,33 @@
-<footer class="bg-pf-dark-2 w-full p-8 text-center text-sm sm:text-base mt-10">
-  <p>
-    Made with 💚 by <span class="font-bold text-pf-light"
-      >Mario Pérez Hurtado</span>
-  </p>
+---
+import GithubIcon from '../components/icons/GithubIcon.astro'
+import LinkedinIcon from '../components/icons/LinkedinIcon.astro'
+import EmailIcon from '../components/icons/EmailIcon.astro'
+---
+
+<footer
+  class="border-t-2 py-4 sm:py-8 mt-10 max-w-screen-lg mx-auto border-pf-dark-3 flex justify-between items-center">
+  <p class="font-semibold text-sm">Mario Pérez Hurtado</p>
+  <ul class="flex justify-center items-center gap-1">
+    <li>
+      <a href="mailto:marioph10@gmail.com" class="block p-1">
+        <EmailIcon />
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://github.com/marioperezhurtado"
+        target="_blank"
+        class="block p-1">
+        <GithubIcon />
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.linkedin.com/in/marioperezhurtado"
+        target="_blank"
+        class="block p-1">
+        <LinkedinIcon />
+      </a>
+    </li>
+  </ul>
 </footer>

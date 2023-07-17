@@ -4,13 +4,29 @@ import Heading from './_components/Heading.astro'
 import Projects from './_components/Projects.astro'
 import Blog from './_components/Blog.astro'
 import Tech from './_components/Tech.astro'
+import Timeline from './_components/Timeline.astro'
 ---
 
 <RootLayout>
-  <main class="mx-auto w-full mt-10 md:mt-20">
+  <svg
+    viewBox="0 0 1440 320"
+    preserveAspectRatio="none"
+    class="absolute top-56 pointer-events-none -left-0 w-screen h-42 md:h-60 lg:h-80 hidden lg:block">
+    <path
+      id="path"
+      fill="transparent"
+      fill-opacity="1"
+      d="M0,96L120,96C240,96,480,96,720,128C960,160,1200,224,1320,256L1440,288"
+      stroke="#393B4E"
+      stroke-width="2"
+      stroke-dasharray="10 5"
+      stroke-dashoffset="0"></path>
+  </svg>
+  <main class="mx-auto w-full mt-10 md:mt-20 max-w-screen-lg">
     <Heading />
     <Projects />
     <Blog />
     <Tech />
+    <Timeline />
   </main>
 </RootLayout>
