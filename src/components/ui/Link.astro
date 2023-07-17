@@ -1,4 +1,5 @@
 ---
+import TopRightIcon from '../icons/TopRightIcon.astro'
 import type { HTMLAttributes } from 'astro/types'
 
 type Props = HTMLAttributes<'a'> & {
@@ -9,18 +10,16 @@ const { arrow = false, ...props } = Astro.props
 ---
 
 <a
-  class={`pt-2 group pb-1.5 flex items-center gap-2 px-4 text-sm bg-pf-dark-2 rounded-md hover:bg-pf-dark-3 text-pf-light-2 w-fit transition shadow-md font-semibold ${
-    arrow ? 'pr-2.5' : ''
+  class={`pt-2 group pb-1.5 flex items-center gap-2 px-3 text-sm bg-pf-dark-2 rounded-md hover:bg-pf-dark-3 text-pf-light-2 w-fit transition shadow-md font-semibold ${
+    arrow ? 'pr-2' : ''
   } ${props.class}`}
   {...props}>
   <slot />
   {
     arrow && (
-      <img
-        src="/icons/top-right-arrow.svg"
-        alt="Open link"
-        class="h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"
-      />
+      <span class="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition">
+        <TopRightIcon />
+      </span>
     )
   }
 </a>
