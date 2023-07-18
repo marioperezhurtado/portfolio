@@ -19,7 +19,7 @@ const posts = (await getCollection('blog')).sort(
         <li class="max-w-screen-sm">
           <a
             href={`/blog/${post.slug}`}
-            class="text-lg sm:text-xl font-display text-pf-light font-bold underline underline-offset-4 decoration-2 decoration-pf-dark-3 hover:decoration-pf-light-2 transition">
+            class="text-lg sm:text-xl text-pf-light font-semibold underline underline-offset-4 decoration-2 decoration-pf-dark-3 hover:decoration-pf-light-2 transition">
             {post.data.title}
           </a>
           <p class="text-sm mb-1">

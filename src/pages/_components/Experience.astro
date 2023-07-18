@@ -1,0 +1,17 @@
+---
+import Highlighted from '../../components/ui/Highlighted.astro'
+import Timeline from '../../components/Timeline.svelte'
+---
+
+<section class="mb-16 sm:mb-28">
+  <h2
+    class="text-2xl sm:text-3xl mb-2 sm:mb-4 font-bold font-display text-pf-light">
+    Knowledge building
+  </h2>
+  <p class="max-w-prose mb-5 sm:text-lg">
+    With a <Highlighted text="can-do" /> attitude and a drive for always improve,
+    I've learned the most through practical experience. However, I consider that
+    my formal education has given me a solid foundation to build upon.
+  </p>
+  <Timeline client:visible />
+</section>
