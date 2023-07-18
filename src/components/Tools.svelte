@@ -41,7 +41,7 @@
   class="mt-10 flex gap-8 items-center overflow-x-auto pb-8 select-none cursor-pointer"
 >
   {#each toolItems as { title, tools }}
-    <div
+    <li
       class="bg-pf-dark-2 h-44 aspect-video p-4 flex flex-col justify-between rounded-md shadow-md"
     >
       <h3 class="text-lg font-semibold text-pf-light">
@@ -52,6 +52,6 @@
           {i === tools.length - 1 ? `${t}.` : `${t}, `}
         {/each}
       </p>
-    </div>
+    </li>
   {/each}
 </ul>

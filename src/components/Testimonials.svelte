@@ -63,9 +63,9 @@
         fill="currentColor"
       />
     </svg>
-    <h4 class="text-pf-light font-bold text-lg mt-2 mb-5">
+    <h3 class="text-pf-light font-bold text-lg mt-2 mb-5">
       {testimonial.title}
-    </h4>
+    </h3>
     <p>
       {testimonial.quote}
     </p>
