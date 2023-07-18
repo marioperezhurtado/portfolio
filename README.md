@@ -1,6 +1,4 @@
-# Personal portfolio website 
-
-Here, I show who I am, what I do, and some of my projects. 👀
+# Personal portfolio website
 
 Live at [marioph.com](https://marioph.com) 📌
 
