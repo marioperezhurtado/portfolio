@@ -5,17 +5,17 @@ pubDate: 'Jul 07 2023'
 image: '/blog/rust-is-really-cool.webp'
 ---
 
-As a frontend/fullstack TypeScript developer, I wanted to explore a completely different language, stepping out of my comfort zone and exploring new ways of doing things.
+As a front-end/full-stack TypeScript developer, I wanted to explore a completely different language, stepping out of my comfort zone and exploring new ways of doing things.
 
-Rust’s selling point for a large group of people is its performance, but I was particularly interested in its _error handling_ and _functional language_ features. I found much more than I expected on my journey.
+Rust’s selling point for a large group of people is its performance, but I was particularly interested in its _error handling_ and _functional language_ features.
 
-I am far from being an expert in Rust, but I would like to discuss the topics that have caught my interest the most, changing my perspective on software development.
+I am far from being an expert in Rust, but I would like to share the topics that have caught my interest the most, changing my perspective on software development.
 
-## Inmutability By Default
+## Immutability By Default
 
 In Rust, variables are immutable by default. To declare a variable as mutable, you must use the `mut` keyword. Functions also need to declare if they intend to mutate their arguments.
 
-This means that we must be very **explicit** about whether we are going to change the value of any variable, making our code more robust, predictable, and easier to reason about.
+We must be **explicit** about whether we are going to change the value of any variable, making our code more robust, predictable, and easier to reason about.
 
 ```rust
 let foo = 5;
@@ -35,99 +35,35 @@ buzz.push(20)  // ✔
 
 Rust's _pattern matching_ syntax is a powerful tool for handling complex data types and writing robust and expressive code.
 
-Cosider a program that represents the types of US coins. We can use an enum to represent the different types of coins, and another one to represent all the possible states of the quarter coins:
-
 ```rust
-enum Coin {
-    Penny,
-    Nickel,
-    Dime,
-    Quarter(UsState),
-}
-enum UsState {
-    Alabama,
-    Alaska,
-    // ...
-}
-```
-
-We could write a function that takes an unknown US coin, determines which coin it is, and returns its value in cents.
-
-Let’s imagine that a friend is trying to collect all 50 state quarters. While we sort our loose change by coin type, we’ll also call out the name of the state associated with each quarter so that if it’s one our friend doesn’t have, they can add it to their collection.
-
-```rust
-fn value_in_cents(coin: Coin) -> u8 {
-    match coin {
-        Coin::Penny => 1,
-        Coin::Nickel => 5,
-        Coin::Dime => 10,
-        Coin::Quarter(state) => {
-            println!("State quarter from {:?}!", state);
-            25
-        }
-    }
+enum Message {
+	Quit,
+	Move { x: i32, y: i32 },
+	Write(String),
+	ChangeColor(i32, i32, i32),
 }
 ```
 
 The `match` statement allow us to compare a value against a series of _patterns_ and then execute code based on which pattern matches. We can represent all the possible states of our application and safely handle every scenario in a concise and expressive way.
 
-The following example is taken from my solution for [Advent of Code 2022 - Day 2](https://adventofcode.com/2022/day/2). We won't cover the entire problem here, but the code below calculates the score of a given round of "Rock Paper Scissors".
-
-1 for Rock, 2 for Paper, and 3 for Scissors.
-
-0 if you lost, 3 if the round was a draw, and 6 if you won.
-
-The first `match` expression evaluates a tuple of the player’s and oponent’s chosen shapes. The second one evaluates the outcomes of the round and adds a bonus to the score.
-
 ```rust
-fn round_score(shape_player: Shape, shape_oponent: Shape) -> u32 {
-    let round_result = match (shape_player, shape_oponent) {
-        (Shape::Rock, Shape::Scissors) => Outcome::Win(1),
-        (Shape::Rock, Shape::Rock) => Outcome::Draw(1),
-        (Shape::Rock, Shape::Paper) => Outcome::Loss(1),
-        (Shape::Paper, Shape::Rock) => Outcome::Win(2),
-        (Shape::Paper, Shape::Paper) => Outcome::Draw(2)
-        (Shape::Paper, Shape::Rock) => Outcome::Loss(2),
-        (Shape::Scissors, Shape::Paper) => Outcome::Win(3),
-        (Shape::Scissors, Shape::Scissors) => Outcome::Draw(3)
-        (Shape::Scissors, Shape::Rock) => Outcome::Loss(3),
-    }
-
-    match round_result {
-        Outcome::Win(val) => val + 6,
-        Outcome::Draw(val) => val + 3,
-        Outcome::Lose(val) => val,
-    }
+fn handle_message(msg: Message) {
+	match msg {
+		Message::Quit => println!("Goodbye!"),
+		Message::Move { x, y } => println!("Move to {},{}", x, y),
+		Message::Write(text) => println!("Text: {}", text),
+		Message::ChangeColor(r, g, b) => println!("Color: {},{},{}"),
+	}
 }
 ```
 
-The important bit here, is that pattern matching is _exhaustive_, wich means we must handle all possible cases, eliminating the risk of missing critical scenarios and potential bugs.
-
-Otherwise, the program would not compile:
-
-```
-~$ cargo run
-   Compiling advent-of-code-2022 v0.1.0 (/advent-of-code-2022)
-error[E0004]: non-exhaustive patterns: `(Shape::Rock, Shape::Scissors)` not covered
-  --> src/puzzles/day2.rs:27:31
-   |
-27 |     let round_outcome = match (shape_oponent, shape_player) {
-   |                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ pattern `(Shape::Rock, Shape::Scissors)` not covered
-   |
-   = note: the matched value is of type `(Shape, Shape)`
-help: ensure that all possible cases are being handled by adding a match arm with a wildcard pattern or an explicit pattern as shown
-   |
-35 ~         (Shape::Scissors, Shape::Scissors) => Outcome::Draw(3),
-36 ~         (Shape::Rock, Shape::Scissors) => todo!(),
-   |
-
-For more information about this error, try `rustc --explain E0004`.
-error: could not compile `advent-of-code-2022` (bin "advent-of-code-2022") due to previous error
-```
+Pattern matching is **exhaustive**, which means we must handle all possible cases, eliminating the risk of missing critical scenarios and potential bugs. Otherwise, the program would not compile.
 
 ## Error Handling Done Right
 
-Rust treats errors as values. Instead of _throwing_ and error and hoping that some function above will _catch_ it, if your code can produce an error, the compiler requires you to handle it or explicitly pass it to the next function. `Result` is an enum that can be either `Ok` or `Err`. Each variant represents the success or failure of the operation, with its resulting value.
+Rust treats errors as values. Instead of _throwing_ and error and hoping that some function above will _catch_ it, if your code can produce an error, the compiler requires you to handle it or explicitly pass it to the next function.
+
+`Result` is an `enum` which value can be either `Ok` or `Err`. Each variant represents the success or failure of the operation, with its resulting value.
 
 ```rust
 enum Result<T, E> {
@@ -136,7 +72,7 @@ enum Result<T, E> {
 }
 ```
 
-Consider this code that reads from a text file. The `read_to_string` function has a return type of `Result`. That indicates that the code may contain an error, and requires handling it before using the result.
+Consider this code that reads from a text file. The `read_to_string` function has a return type of `Result`. That indicates that the code might contain an error, thus forcing to handle it before using the result.
 
 ```rust
 use std::fs;
@@ -158,34 +94,32 @@ use std::fs;
 use std::io::Error;
 
 fn read_from_file(path: &str) -> Result<String, Error> {
-    let read_result = fs::read_to_string(path);
-
-    read_result
+    fs::read_to_string(path);
 }
 ```
 
-By combining _errors as values_ with enums and pattern matching, Rust ensures that we correctly handle all possible errors in our code.
+By combining _errors as values_ with `enums` and pattern matching, Rust ensures that we correctly handle all possible errors in our code.
 
 ```rust
 match error.kind() {
-    ErrorKind::NotFound => do_something(),
-    ErrorKind::PermissionDenied => do_something(),
-    ErrorKind::FileTooLarge => do_something(),
-    // ...
-    _ => do_something(),  // catch-all
+    ErrorKind::NotFound => {...},
+    ErrorKind::PermissionDenied => {...},
+    ErrorKind::FileTooLarge => {...},
 }
 ```
 
-Comparing it to TypeScript, we can see the strength of this solution. In TypeScript, errors are thrown without any built-in mechanism to ensure that all error scenarios are properly handled or even if they will be handled at all. In addition, TypeScript does not allow overloading the catch method to handle different error types as other languages do.
+In TypeScript, errors are thrown without any built-in mechanism to ensure that all error scenarios are properly handled or even if they will be handled at all.
 
-```tsx
+```typescript
 try {
-  // do i need to try catch?
+  // do i need to handle a potential error?
   does_this_throw()
-} catch (err: ???) {} // cannot infer the possible error types
+} catch (err: any) { // cannot infer the possible error types
+	if (err instanceOf SomeError){...}
+	if (err instanceOf OtherError){...}
+}
 
-// cannot overload with multiple catches
-// who is responsible for handling?
+// who is responsible for handling the error?
 ```
 
 ## Null References: The Billion Dollar Mistake
@@ -198,7 +132,7 @@ In his 2009 presentation “Null References: The Billion Dollar Mistake,” Ton
 
 The problem isn’t really with the concept of null values, but with the particular implementation. As such, Rust does not have nulls, but it does have an `enum` that can encode the concept of a value being present or absent.
 
-`Option` is an enum that encodes the very common scenario in which a value could be something or it could be nothing. A `Option` type can be either `Some`, with a value, or `None`, that represents the absence of a value.
+`Option` is an `enum` that encodes the very common scenario in which a value could be something or it could be nothing. A `Option` type can be either `Some`, with a value, or `None`, that represents the absence of a value.
 
 ```rust
 enum Option<T> {
@@ -230,7 +164,7 @@ fn main() {
 
 ## Rust Compiler Teaches You
 
-Learning Rust can be challenging. At first, understanding concepts such as the _ownership model, string types, generics, traits, lifetimes, macros_, and complying with the strict and authoritative rules of the language, can be overwhelming. However, one thing that made my learning journey easier was to learn from the compiler errors.
+Learning Rust can be quite challenging. Understanding concepts such as the _ownership model, string types, generics, traits, lifetimes, macros_, and complying with the strict and authoritative rules of the language, can be overwhelming. However, one thing that made my learning journey easier was to learn from the compiler errors.
 
 Initially, you may make several fundamental mistakes because you do not yet understand how Rust works. The compiler is very strict, but it is also extremely useful, showing precisely where the error occurred, the probable solution to it, and a brief explanation along with the corresponding error code.
 
@@ -257,7 +191,7 @@ error: could not compile `ownership` due to previous error
 
 Rust is _unfamiliar_, and can be tough to learn, but it's worth the effort. It is a strict language with a steep learning curve; however, this design choice helps developers understand its complexity early on and avoid bugs in the future. Keep this in mind before starting to learn Rust.
 
-All the topics we have discussed, and many more advanced features that I have yet to learn, make Rust a robust, elegant, and powerful language. Although I will probably not use it at work, I have found it a very enjoyable language. It has changed my view on software development and how things can be done, and most importantly, it has been **really fun**.🦀
+Rust is a robust, elegant, and powerful language. Although I will probably not use it at work, I have found it a very enjoyable language to learn, despite being quite challenging. It has changed my view on software development and how things can be done, and most importantly, it has been **really fun**.🦀
 
 ## Other Resources
 
