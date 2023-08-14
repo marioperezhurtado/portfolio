@@ -10,8 +10,8 @@ module.exports = {
         'pf-dark': '#222430',
         'pf-dark-2': '#393b4e',
         'pf-dark-3': '#4b4e69',
-        'pf-light': '#e4e5ea',
-        'pf-light-2': '#cacaca',
+        'pf-light': '#ffffff',
+        'pf-light-2': '#e0e0e0',
         'pf-accent': '#16ca73'
       },
       fontFamily: {

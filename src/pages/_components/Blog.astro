@@ -22,7 +22,7 @@ const posts = (await getCollection('blog')).sort(
             class="text-lg sm:text-xl text-pf-light font-semibold underline underline-offset-4 decoration-2 decoration-pf-dark-3 hover:decoration-pf-light-2 transition">
             {post.data.title}
           </a>
-          <p class="text-sm mb-1">
+          <p class="text-sm mt-1 mb-2">
             <FormattedDate date={post.data.pubDate} />
           </p>
           <p class="max-w-prose">{post.data.description}</p>

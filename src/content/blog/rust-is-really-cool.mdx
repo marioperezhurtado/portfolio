@@ -1,8 +1,8 @@
 ---
 title: 'Rust Is Really Cool'
-description: "A brief introduction to Rust's most interesting language features."
+description: "A brief introduction to Rust's most interesting language features, from a web developer perspective. Inmutability, pattern matching, error handling, null references, and more."
 pubDate: 'Jul 07 2023'
-image: '/blog/rust-is-really-cool.webp'
+image: 'rust-is-really-cool.webp'
 ---
 
 As a front-end/full-stack TypeScript developer, I wanted to explore a completely different language, stepping out of my comfort zone and exploring new ways of doing things.
@@ -102,25 +102,29 @@ By combining _errors as values_ with `enums` and pattern matching, Rust ensures 
 
 ```rust
 match error.kind() {
-    ErrorKind::NotFound => {...},
-    ErrorKind::PermissionDenied => {...},
-    ErrorKind::FileTooLarge => {...},
+    ErrorKind::NotFound => ...,
+    ErrorKind::PermissionDenied => ...,
+    ErrorKind::FileTooLarge => ...,
 }
 ```
 
-In TypeScript, errors are thrown without any built-in mechanism to ensure that all error scenarios are properly handled or even if they will be handled at all.
+Comparing it to TypeScript, we can see the strength and correctness of this solution.
+
+In TypeScript errors are thrown without any built-in mechanism to ensure that all error scenarios are properly handled or even if they will be handled at all.
 
 ```typescript
 try {
   // do i need to handle a potential error?
   does_this_throw()
-} catch (err: any) { // cannot infer the possible error types
+} catch (err: ???) { // cannot infer the possible error types
 	if (err instanceOf SomeError){...}
 	if (err instanceOf OtherError){...}
 }
 
 // who is responsible for handling the error?
 ```
+
+There are a few libraries that try to solve this exact problem, but they are not part of the language itself.
 
 ## Null References: The Billion Dollar Mistake
 
