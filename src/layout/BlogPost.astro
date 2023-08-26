@@ -16,10 +16,10 @@ const { title, description, pubDate, image } = Astro.props
     <article class="max-w-prose mx-auto">
       <a href="/" class="mb-10 block w-fit underline">← Back</a>
       <h1
-        class="font-display text-pf-light font-extrabold text-2xl sm:text-3xl">
+        class="mb-2 font-display text-pf-light font-extrabold text-2xl sm:text-3xl">
         {title}
       </h1>
-      <span class="text-sm mt-2">
+      <span class="text-sm">
         <FormatedDate date={pubDate} />
       </span>
       <hr class="h-px mt-4 mb-8 bg-pf-dark-3 border-0" />
@@ -42,7 +42,7 @@ const { title, description, pubDate, image } = Astro.props
       font-size: 1.25rem;
       font-weight: 800;
       font-family: 'Syne';
-      margin: 2rem 0 1rem;
+      padding: 2rem 0 1rem;
     }
     #blog code {
       background-color: #393b4e;
@@ -84,7 +84,7 @@ const { title, description, pubDate, image } = Astro.props
     #blog a:hover {
       color: #16ca73;
     }
-    #blog ul {
+    #blog ul, #blog ol {
       padding-left: 1.5rem;
       list-style: disc;
       margin-bottom: 2rem;
