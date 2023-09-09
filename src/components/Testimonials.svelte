@@ -20,13 +20,14 @@
   let testimonial = testimonials[0] as (typeof testimonials)[number]
 </script>
 
-<div class="flex flex-col lg:flex-row mt-10 gap-y-4 gap-x-20">
-  <ul class="flex flex-row flex-wrap lg:flex-col gap-4 w-full lg:w-1/3">
+<div class="flex flex-col lg:flex-row mt-10 gap-y-4 gap-x-14">
+  <ul class="flex flex-row flex-wrap lg:flex-col gap-4 min-w-fit">
     {#each testimonials as t}
       <li>
         <button
           on:click={() => (testimonial = t)}
-          class="w-full p-4 pr-8 rounded-md hover:bg-pf-dark-2 hover:shadow-md transition"
+          class="w-full p-4 pr-8 rounded-md hover:bg-pf-dark-2 hover:shadow-md
+          transition"
           class:bg-pf-dark-2={testimonial === t}
           class:shadow-md={testimonial === t}
         >
@@ -49,7 +50,7 @@
       </li>
     {/each}
   </ul>
-  <div class="max-w-prose pt-4 w-full">
+  <div class="pt-4 max-w-prose">
     <svg
       class="text-pf-dark-3"
       viewBox="0 0 24 27"

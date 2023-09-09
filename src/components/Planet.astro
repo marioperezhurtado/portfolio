@@ -1,0 +1,43 @@
+---
+interface Props {
+  speed: number;
+  color: string;
+  size: number;
+  orbitSize: number;
+}
+
+const { speed, color, size, orbitSize } = Astro.props;
+
+const startingRotation = Math.random() * 360;
+---
+
+<div id="orbit" class="absolute border-2 border-pf-dark-2 rounded-full">
+  <div id="planet" class="absolute rounded-full"></div>
+</div>
+
+<style define:vars={{ speed, color, size, orbitSize, startingRotation }}>
+  #planet {
+    background-color: var(--color);
+    top: calc((var(--orbitSize) / 3.6 - var(--size)) / 2 * 1px);
+    left: calc((var(--orbitSize) / 3.6 - var(--size)) / 2 * 1px);
+    width: calc(var(--size) * 1px);
+    height: calc(var(--size) * 1px);
+  }
+
+  #orbit {
+    width: calc(var(--orbitSize) * 1px);
+    height: calc(var(--orbitSize) * 1px);
+    animation: orbit linear infinite;
+    animation-duration: calc(var(--speed) * 1s);
+  }
+
+  @keyframes orbit {
+    from {
+      transform: rotate(calc(var(--startingRotation) * 1deg));
+    }
+    to {
+      transform: rotate(calc(var(--startingRotation) * 1deg + 360deg));
+    }
+  }
+</style>
+

@@ -1,0 +1,53 @@
+---
+import Planet from "../../components/Planet.astro";
+
+const planets = [
+  {
+    color: "#D74D1F",
+    speed: 10,
+    size: 8,
+    orbitSize: 60,
+  },
+  {
+    color: "#07A1B6",
+    speed: 20,
+    size: 12,
+    orbitSize: 90,
+  },
+  {
+    color: "#665269",
+    speed: 30,
+    size: 16,
+    orbitSize: 120,
+  },
+  {
+    color: "#047168",
+    speed: 50,
+    size: 20,
+    orbitSize: 160,
+  },
+  {
+    color: "#697788",
+    speed: 40,
+    size: 16,
+    orbitSize: 200,
+  },
+];
+---
+
+<div class="relative flex justify-center items-center w-[200px] h-[200px]">
+  {
+    planets.map((planet) => (
+      <Planet
+        color={planet.color}
+        speed={planet.speed}
+        size={planet.size}
+        orbitSize={planet.orbitSize}
+      />
+    ))
+  }
+  <div
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-orange-300 rounded-full"
+  >
+  </div>
+</div>

@@ -1,47 +1,20 @@
 ---
-import RootLayout from '../layout/RootLayout.astro'
-import Heading from './_components/Heading.astro'
-import Projects from './_components/Projects.astro'
-import Blog from './_components/Blog.astro'
-import Tech from './_components/Tech.astro'
-import Experience from './_components/Experience.astro'
-import References from './_components/References.astro'
+import RootLayout from "../layout/RootLayout.astro";
+import Heading from "./_components/Heading.astro";
+import Projects from "./_components/Projects.astro";
+import Blog from "./_components/Blog.astro";
+import Tech from "./_components/Tech.astro";
+import Experience from "./_components/Experience.astro";
+import References from "./_components/References.astro";
 ---
 
 <RootLayout>
-  <svg
-    viewBox="0 0 1440 320"
-    preserveAspectRatio="none"
-    class="absolute top-56 pointer-events-none -left-0 w-screen h-60 lg:h-70 xl:h-80 hidden md:block"
-    ><path
-      id="path"
-      fill="transparent"
-      fill-opacity="1"
-      stroke="#393B4E"
-      stroke-width="2"
-      stroke-dasharray="10 5"
-      stroke-dashoffset="0"
-      d="M0,160 C80,130 160,117 240,105 C320,93 400,83 560,97 C720,111 880,149 1040,160 C1200,171 1280,149 1360,122.7 C1400,109.3 1440,96 1440,96"
-    ></path>
-  </svg>
-  <main class="mx-auto w-full mt-10 md:mt-20 max-w-screen-lg">
+  <main class="mx-auto w-full mt-10 md:mt-20 max-w-screen-md">
     <Heading />
     <Projects />
     <Blog />
     <Tech />
     <Experience />
     <References />
-
-    <style>
-      #path {
-        animation: dash 1000s linear infinite;
-      }
-
-      @keyframes dash {
-        to {
-          stroke-dashoffset: -10000;
-        }
-      }
-    </style>
   </main>
 </RootLayout>

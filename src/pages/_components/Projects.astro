@@ -1,51 +1,65 @@
 ---
-import Project from '../../components/Project.astro'
-import Link from '../../components/ui/Link.astro'
+import Project from "../../components/Project.astro";
+import Link from "../../components/ui/Link.astro";
+
+const projects = [
+  {
+    title: "DevForum",
+    description: "Web forum focused on programming topics.",
+    url: "https://devforum.dev",
+  },
+  {
+    title: "Barbería HB",
+    description: "Website for a local barbershop in Crevillente.",
+    url: "https://barberiahb.com",
+  },
+  {
+    title: "BOBLE",
+    description: "Online web chat.",
+    url: "https://chat.marioph.com",
+  },
+  {
+    title: "Code Editor",
+    description: "Local-first web code editor.",
+    url: "https://code.marioph.com",
+  },
+];
 ---
 
 <section class="mb-16 sm:mb-28">
   <h2
-    class="text-2xl sm:text-3xl mb-2 sm:mb-4 font-bold font-display text-pf-light">
+    class="text-2xl sm:text-3xl mb-2 sm:mb-4 font-bold font-display text-pf-light"
+  >
     I like building things
   </h2>
   <p class="sm:text-lg">The best way to learn is by doing. 👨‍💻</p>
   <ul
-    class="mt-6 sm:mt-10 mb-5 sm:mb-8 grid xs:grid-cols-2 md:grid-cols-3
-    gap-5 sm:gap-10 max-w-screen-md">
-    <li>
-      <Project
-        title="DevForum"
-        description="Web forum focused on programming topics."
-        url="https://devforum.dev"
-      />
-    </li>
-    <li>
-      <Project
-        title="Barbería HB"
-        description="Website for a local barbershop in Crevillente."
-        url="https://barberiahb.com"
-      />
-    </li>
-    <li>
-      <Project
-        title="BOBLE"
-        description="Online free web chat."
-        url="https://chat.marioph.com"
-      />
-    </li>
-    <li>
-      <Project
-        title="Code Editor"
-        description="Local-first web code editor."
-        url="https://code.marioph.com"
-      />
-    </li>
+    class="mt-6 sm:mt-10 mb-5 sm:mb-8 grid xs:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-10 max-w-screen-md"
+  >
+    {
+      projects.map(({ title, description, url }) => (
+        <li>
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-lg sm:text-xl text-pf-light font-semibold underline 
+  underline-offset-4 decoration-2 decoration-pf-dark-3 
+  hover:decoration-pf-light-2 transition"
+          >
+            {title}
+          </a>
+          <p class="mt-2">{description}</p>
+        </li>
+      ))
+    }
   </ul>
   <Link
     href="https://github.com/marioperezhurtado"
     target="_blank"
     rel="noopener noreferrer"
-    arrow>
+    arrow
+  >
     More projects
   </Link>
 </section>

@@ -29,15 +29,9 @@
     const new_position = timeline.getBoundingClientRect().top
     position = new_position > 0 ? new_position : 0
   }
-
-  onMount(() => {
-    window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  })
 </script>
+
+<svelte:window on:scroll={handleScroll} />
 
 <div
   class="mt-10 flex h-fit relative overflow-hidden pl-1"
