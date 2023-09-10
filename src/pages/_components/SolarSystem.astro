@@ -5,6 +5,7 @@ const planets = [
   {
     name: "Hourglass Twins",
     image: "/planets/hourglass-twins.webp",
+    url: "https://outerwilds.fandom.com/wiki/Hourglass_Twins",
     orbitSpeed: 10,
     rotationSpeed: 4,
     size: 12,
@@ -13,6 +14,7 @@ const planets = [
   {
     name: "Timber Hearth",
     image: "/planets/timber-hearth.webp",
+    url: "https://outerwilds.fandom.com/wiki/Timber_Hearth",
     orbitSpeed: 20,
     rotationSpeed: 3,
     size: 12,
@@ -21,6 +23,7 @@ const planets = [
   {
     name: "Brittle Hollow",
     image: "/planets/brittle-hollow.webp",
+    url: "https://outerwilds.fandom.com/wiki/Brittle_Hollow",
     orbitSpeed: 30,
     rotationSpeed: 8,
     size: 15,
@@ -29,6 +32,7 @@ const planets = [
   {
     name: "Giant's Deep",
     image: "/planets/giants-deep.webp",
+    url: "https://outerwilds.fandom.com/wiki/Giant%27s_Deep",
     orbitSpeed: 60,
     rotationSpeed: 12,
     size: 20,
@@ -37,6 +41,7 @@ const planets = [
   {
     name: "Dark Bramble",
     image: "/planets/dark-bramble.webp",
+    url: "https://outerwilds.fandom.com/wiki/Dark_Bramble",
     orbitSpeed: 40,
     rotationSpeed: 18,
     size: 17,
@@ -47,16 +52,59 @@ const planets = [
 
 <div class="relative flex justify-center items-center w-[200px] h-[200px]">
   {planets.map((planet) => <Planet {...planet} />)}
-  <div
-    id="sun"
-    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full"
+  <a
+    href="https://outerwilds.fandom.com/wiki/Sun"
+    target="_blank"
+    rel="noopener noreferrer"
   >
-    <img src="/planets/sun.webp" alt="sun" class="w-full h-full" />
-  </div>
+    <img
+      src="/planets/sun.webp"
+      alt="sun"
+      id="sun"
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full"
+    />
+  </a>
 </div>
 
 <style>
   #sun {
     box-shadow: 0px 0px 52px 2px rgba(255, 170, 0, 1);
+
+    animation: blink 5s infinite, superNova 60s forwards;
+  }
+
+  @keyframes blink {
+    0% {
+      box-shadow: 0px 0px 52px 3px rgba(255, 170, 0, 1);
+    }
+    50% {
+      box-shadow: 0px 0px 52px 3px rgba(255, 170, 0, 0.8);
+    }
+    100% {
+      box-shadow: 0px 0px 52px 3px rgba(255, 170, 0, 1);
+    }
+  }
+
+  @keyframes superNova {
+    40% {
+      filter: hue-rotate(-25deg) saturate(1.5);
+    }
+    50% {
+      filter: none;
+      scale: 1;
+      translate: none;
+      filter: hue-rotate(-25deg) saturate(1.5);
+    }
+    50.1% {
+      filter: hue-rotate(180deg) blur(2px);
+      scale: 1;
+      translate: none;
+    }
+    100% {
+      /* supernova */
+      filter: hue-rotate(180deg) blur(2px);
+      scale: 10;
+      translate: 150px 150px;
+    }
   }
 </style>

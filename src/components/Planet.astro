@@ -2,38 +2,49 @@
 interface Props {
   name: string;
   image: string;
+  url: string;
   rotationSpeed: number;
   orbitSpeed: number;
   size: number;
   orbitSize: number;
 }
 
-const { image, rotationSpeed, orbitSpeed, size, orbitSize } = Astro.props;
+const { image, url, rotationSpeed, orbitSpeed, size, orbitSize } = Astro.props;
 
 const startingOrbit = Math.random() * 360;
 ---
 
-<div id="orbit" class="absolute border-2 border-pf-dark-2 rounded-full">
-  <div id="planet" class="absolute rounded-full">
+<div
+  id="orbit"
+  class="absolute border-2 border-pf-dark-2 rounded-full pointer-events-none"
+>
+  <a
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+    id="planet"
+    class="absolute rounded-full pointer-events-auto"
+  >
     <img src={image} class="rounded-full" />
-  </div>
+  </a>
 </div>
 
-<style define:vars={{ rotationSpeed, orbitSpeed, size, orbitSize, startingOrbit}}>
+<style
+  define:vars={{ rotationSpeed, orbitSpeed, size, orbitSize, startingOrbit }}
+>
   #planet {
     top: calc((var(--orbitSize) / 3.6 - var(--size)) / 2 * 1px);
     left: calc((var(--orbitSize) / 3.6 - var(--size)) / 2 * 1px);
     width: calc(var(--size) * 1px);
     height: calc(var(--size) * 1px);
-    animation: spin linear infinite;
-    animation-duration: calc(var(--rotationSpeed) * 1s);
+    animation: spin calc(var(--rotationSpeed) * 1s) linear infinite;
   }
 
   #orbit {
     width: calc(var(--orbitSize) * 1px);
     height: calc(var(--orbitSize) * 1px);
-    animation: orbit linear infinite;
-    animation-duration: calc(var(--orbitSpeed) * 1s);
+    animation: orbit calc(var(--orbitSpeed) * 1s) linear infinite,
+      disappear 40s linear forwards;
   }
 
   @keyframes orbit {
@@ -48,6 +59,18 @@ const startingOrbit = Math.random() * 360;
   @keyframes spin {
     to {
       transform: rotate(360deg);
+    }
+  }
+
+  @keyframes disappear {
+    0% {
+      opacity: 1;
+    }
+    99% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
     }
   }
 </style>
