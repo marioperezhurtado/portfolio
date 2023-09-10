@@ -9,9 +9,7 @@ image: 'progressive-enhancement.webp'
 ## What is Progressive Enhancement?
 
 Progressive enhancement is a web development technique that focuses on using the
-**web platform**'s core features to build resilient and accessible web applications, and
-then *progressively enhance* the experience by adding feedback, animations,
-and other client-side features.
+**web platform**'s core features to build resilient and accessible web applications, and then *progressively enhance* the experience by adding feedback, animations, and other client-side features.
 
 Do you recall how the native `form` element works? When you submit a form, the browser will send a request to the server, and the server will respond with a new HTML page.
 
@@ -32,8 +30,6 @@ browser's default behaviour, and use the `fetch` API to send the form data to th
 Then, we use the response to update the DOM using JavaScript.
 
 ```tsx
-import { useState } from 'react';
-
 export default function Todos() {
   function handleCreateTodo(event) {
     event.preventDefault();
@@ -114,14 +110,14 @@ even knowing it.
 
 ## You Are Already Using Progressive Enhancement
 
-If you are using any JavaScript framework like Next, Remix or Nuxt, you are
-probably using *progressive enhancement*.
+If you are using any JavaScript framework like [Next](https://nextjs.org/),
+[Remix](https://remix.run/) or [Nuxt](https://nuxt.com/), you are probably using *progressive enhancement*.
 
-Components like [Next](https://nextjs.org/)'s or [Remix](https://remix.run/)'s `<Link>` will work like a regular `<a>`
+Components like Next's or Remix's `<Link>` will work like a regular `<a>`
 element while JavaScript is not loaded, and will be enhanced when JavaScript is
 loaded.
 
-While there is no JavaScript, it will work like a regular link, triggering a full
+While there is no JavaScript, it will work just like a regular link, triggering a full
 page reload to show the new HTML page.
 
 But then, if JavaScript is loaded, this component will intercept the click
@@ -130,26 +126,26 @@ event, fetch the new page, update the DOM, and change the URL without refreshing
 That is a great example of *progressive enhancement*. The **basic
 functionality** is available to everyone, and then it is *enhanced* with
 JavaScript. In this case, this *"enhancement"* is navigating without a page
-refresh and preserving client state.
+refresh and preserving client state, prefetching, etc.
 
-You might think this is a small thing, that only a few users will notice. Is
-this really worth the effort?
+You might think this is a rare case, that only a few users will notice. Is it really worth the effort?
 
 
 ## Progressive Enhancement And Accessibility
 
-My take on this is that you should think about *progressive enhancement* very
+My take here, is that you should think about *progressive enhancement* very
 similarly to how you think about *accessibility*.
 
-We live in a world where building products that provide value is the top
+We live in a world where building products that provide **value** is the top
 priority, and if something doesn't, since it only affects a small percentage of
 users, spending time and effort on it is not worth it.
  
-But if we have libraries and tools that help us make our sites accessible without
-much effort, why not do it?
+But if we had libraries and tools that help us make our sites accessible without
+much effort, why wouldn't we use them?
 
 That's why libraries like [Radix UI](https://www.radix-ui.com/) or [Headless
-UI](https://headlessui.com/) are so useful. They help us build fully accessible web apps, without too much effort.
+UI](https://headlessui.com/) are so useful. They help us build fully accessible
+web apps without the hassle.
 
 ```tsx
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
@@ -187,7 +183,7 @@ export default function MyAccessibleDropdown() {
 ```
 
 And the same goes for *progressive enhancement*. If the frameworks give us **good
-defaults**, and build on top of the **web platform**, we can improve the resilience
+defaults**, and builds on top of the **web platform**, we can improve the resilience
 and availability of our applications without having to change the way we
 develop.
 
@@ -319,6 +315,7 @@ This fancy term of *progressive enhancement* is not new, it's just how the web w
 designed to work. I think we should take advantage of the web platform and build
 on top of it, with the help of frameworks and libraries that give us the right tools
 to do so.
+
 
 ## Other Resources
 
