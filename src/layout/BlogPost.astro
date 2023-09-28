@@ -1,22 +1,24 @@
 ---
-import RootLayout from './RootLayout.astro'
-import FormatedDate from '../components/FormattedDate.astro'
+import RootLayout from "./RootLayout.astro";
+import FormatedDate from "../components/FormattedDate.astro";
 
-import type { CollectionEntry } from 'astro:content'
-type Props = CollectionEntry<'blog'>['data']
+import type { CollectionEntry } from "astro:content";
+type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, image } = Astro.props
+const { title, description, pubDate, image } = Astro.props;
 ---
 
 <RootLayout
   title={`${title} • Mario Pérez Hurtado`}
   description={description}
-  image={`/blog/${image}`}>
+  image={`/blog/${image}`}
+>
   <main class="my-10">
     <article class="max-w-prose mx-auto">
       <a href="/" class="mb-10 block w-fit underline">← Back</a>
       <h1
-        class="mb-2 font-display text-pf-light font-extrabold text-2xl sm:text-3xl">
+        class="mb-2 font-display text-pf-light font-extrabold text-2xl sm:text-3xl"
+      >
         {title}
       </h1>
       <span class="text-sm">
@@ -30,6 +32,14 @@ const { title, description, pubDate, image } = Astro.props
   </main>
 
   <style is:inline>
+    #blog span[data-line] {
+      padding: 0 1rem;
+      border-left: 4px solid transparent;
+    }
+    #blog span[data-highlighted-line] {
+      background-color: #134e4a;
+      border-left: 4px solid #14b8a6;
+    }
     #blog p {
       line-height: 1.5;
       padding-bottom: 1rem;
@@ -41,8 +51,20 @@ const { title, description, pubDate, image } = Astro.props
       color: #e4e5ea;
       font-size: 1.25rem;
       font-weight: 800;
-      font-family: 'Syne';
+      font-family: "Syne";
       padding: 2rem 0 1rem;
+    }
+    #blog pre {
+      padding: 1rem 0;
+      margin: 1rem 0 3rem;
+      border-radius: 6px;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+        0 2px 4px -2px rgb(0 0 0 / 0.1);
+      overflow-x: auto;
+    }
+    #blog pre > code {
+      all: unset;
+      font-size: 14px;
     }
     #blog code {
       background-color: #393b4e;
@@ -50,17 +72,6 @@ const { title, description, pubDate, image } = Astro.props
       border-radius: 3px;
       box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
         0 2px 4px -2px rgb(0 0 0 / 0.1);
-    }
-    #blog pre {
-      padding: 1rem;
-      margin: 1rem 0 3rem;
-      border-radius: 6px;
-      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
-        0 2px 4px -2px rgb(0 0 0 / 0.1);
-    }
-    #blog pre > code {
-      all: unset;
-      font-size: 14px;
     }
     #blog blockquote {
       margin: 1rem 0 2rem;
@@ -84,7 +95,8 @@ const { title, description, pubDate, image } = Astro.props
     #blog a:hover {
       color: #16ca73;
     }
-    #blog ul, #blog ol {
+    #blog ul,
+    #blog ol {
       padding-left: 1.5rem;
       list-style: disc;
       margin-bottom: 2rem;

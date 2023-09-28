@@ -43,8 +43,7 @@ const startingOrbit = Math.random() * 360;
   #orbit {
     width: calc(var(--orbitSize) * 1px);
     height: calc(var(--orbitSize) * 1px);
-    animation: orbit calc(var(--orbitSpeed) * 1s) linear infinite,
-      disappear 40s linear forwards;
+    animation: orbit calc(var(--orbitSpeed) * 1s) linear infinite;
   }
 
   @keyframes orbit {
@@ -59,18 +58,6 @@ const startingOrbit = Math.random() * 360;
   @keyframes spin {
     to {
       transform: rotate(360deg);
-    }
-  }
-
-  @keyframes disappear {
-    0% {
-      opacity: 1;
-    }
-    99% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
     }
   }
 </style>
