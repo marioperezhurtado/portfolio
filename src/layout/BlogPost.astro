@@ -15,7 +15,8 @@ const { title, description, pubDate, image } = Astro.props;
 >
   <main class="my-10">
     <article class="max-w-prose mx-auto">
-      <a href="/" class="mb-10 block w-fit underline">← Back</a>
+      <a href="/" class="mb-10 block w-fit underline hover:text-pf-accent
+      transition">← Back</a>
       <h1
         class="mb-2 font-display text-pf-light font-extrabold text-2xl sm:text-3xl"
       >
@@ -33,12 +34,44 @@ const { title, description, pubDate, image } = Astro.props;
 
   <style is:inline>
     #blog span[data-line] {
-      padding: 0 1rem;
+      padding: 0 0.5rem;
       border-left: 4px solid transparent;
+    }
+    #blog div[data-rehype-pretty-code-fragment] {
+      margin: 1rem 0 3rem;
+    }
+    #blog div[data-rehype-pretty-code-title] {
+      font-size: 0.8rem;
+      color: #fff;
+      margin-bottom: 0.2rem;
     }
     #blog span[data-highlighted-line] {
       background-color: #134e4a;
       border-left: 4px solid #14b8a6;
+    }
+    #blog span[data-highlighted-chars] {
+      border-bottom: 2px solid #14b8a6;
+    }
+    #blog code[data-line-numbers] {
+      counter-reset: line;
+    }
+    #blog code[data-line-numbers] > [data-line]::before {
+      counter-increment: line;
+      content: counter(line);
+      display: inline-block;
+      margin-right: 1rem;
+      width: 1rem;
+      text-align: right;
+      color: #4b5563;
+    }
+    code[data-line-numbers] {
+      counter-reset: lineNumber;
+    }
+    code[data-line-numbers] .line::before {
+      counter-increment: lineNumber;
+      content: counter(lineNumber);
+      display: inline-block;
+      text-align: right;
     }
     #blog p {
       line-height: 1.5;
@@ -55,8 +88,7 @@ const { title, description, pubDate, image } = Astro.props;
       padding: 2rem 0 1rem;
     }
     #blog pre {
-      padding: 1rem 0;
-      margin: 1rem 0 3rem;
+      padding: 0.8rem 0;
       border-radius: 6px;
       box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
         0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -70,6 +102,7 @@ const { title, description, pubDate, image } = Astro.props;
       background-color: #393b4e;
       padding: 0.1rem 0.3rem;
       border-radius: 3px;
+      font-size: 14px;
       box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
         0 2px 4px -2px rgb(0 0 0 / 0.1);
     }

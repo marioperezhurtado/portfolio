@@ -11,13 +11,14 @@ Rust’s selling point for a large group of people is its performance, but I was
 
 I am far from being an expert in Rust, but I would like to share the topics that have caught my interest the most, changing my perspective on software development.
 
+
 ## Immutability By Default
 
 In Rust, variables are immutable by default. To declare a variable as mutable, you must use the `mut` keyword. Functions also need to declare if they intend to mutate their arguments.
 
 We must be **explicit** about whether we are going to change the value of any variable, making our code more robust, predictable, and easier to reason about.
 
-```rust
+```rust showLineNumbers title="main.rs" /mut bar/ /mut buzz/
 let foo = 5;
 let mut bar = 10;  // `bar` is mutable
 
@@ -35,7 +36,7 @@ buzz.push(20)  // ✔
 
 Rust's _pattern matching_ syntax is a powerful tool for handling complex data types and writing robust and expressive code.
 
-```rust
+```rust showLineNumbers title="message.rs"
 enum Message {
 	Quit,
 	Move { x: i32, y: i32 },
@@ -46,7 +47,7 @@ enum Message {
 
 The `match` statement allow us to compare a value against a series of _patterns_ and then execute code based on which pattern matches. We can represent all the possible states of our application and safely handle every scenario in a concise and expressive way.
 
-```rust
+```rust showLineNumbers title="message.rs"
 fn handle_message(msg: Message) {
 	match msg {
 		Message::Quit => println!("Goodbye!"),
@@ -65,7 +66,7 @@ Rust treats errors as values. Instead of _throwing_ and error and hoping that so
 
 `Result` is an `enum` which value can be either `Ok` or `Err`. Each variant represents the success or failure of the operation, with its resulting value.
 
-```rust
+```rust showLineNumbers title="src/core/lib.rs"
 enum Result<T, E> {
     Ok(T),
     Err(E),
@@ -74,7 +75,7 @@ enum Result<T, E> {
 
 Consider this code that reads from a text file. The `read_to_string` function has a return type of `Result`. That indicates that the code might contain an error, thus forcing to handle it before using the result.
 
-```rust
+```rust showLineNumbers title="read_file.rs"
 use std::fs;
 
 fn read_from_file(path: &str) {
@@ -89,7 +90,7 @@ fn read_from_file(path: &str) {
 
 If we do not want to handle it now, we must modify the function signature to indicate that the result of this function could potentially be an error.
 
-```rust {4}
+```rust showLineNumbers title="read_file.rs" /Result<String, Error>/
 use std::fs;
 use std::io::Error;
 
@@ -100,7 +101,7 @@ fn read_from_file(path: &str) -> Result<String, Error> {
 
 By combining _errors as values_ with `enums` and pattern matching, Rust ensures that we correctly handle all possible errors in our code.
 
-```rust
+```rust showLineNumbers title="read_file.rs"
 match error.kind() {
     ErrorKind::NotFound => ...,
     ErrorKind::PermissionDenied => ...,
@@ -113,7 +114,7 @@ former solution.
 
 In TypeScript, errors are thrown without any built-in mechanism to ensure that all error scenarios are properly handled or even if they will be handled at all.
 
-```typescript
+```typescript showLineNumbers title="error_handling.ts" /err: ???/
 try {
   // do i need to handle a potential error?
   does_this_throw()
@@ -125,9 +126,9 @@ try {
 // who is responsible for handling the error?
 ```
 
-There are a few libraries that try to solve this exact problem in TypeScript,
-but they are not part of the language itself, they have performance
-implications, limitations and other caveats.
+There are a few [libraries](https://github.com/vultix/ts-results) that try to
+solve this exact problem in TypeScript, but they are not part of the language
+itself, and they have performance implications, limitations and other caveats.
 
 ## Null References: The Billion Dollar Mistake
 
@@ -141,7 +142,7 @@ The problem isn’t really with the concept of null values, but with the particu
 
 `Option` is an `enum` that encodes the very common scenario in which a value could be something or it could be nothing. A `Option` type can be either `Some`, with a value, or `None`, that represents the absence of a value.
 
-```rust
+```rust showLineNumbers title="src/core/lib.rs"
 enum Option<T> {
     Some(T),
     None,
@@ -150,7 +151,7 @@ enum Option<T> {
 
 The Rust compiler ensures that you convert an `Option<T>` to a `T` before you can perform `T` operations with it. Generally, this helps catch one of the most common issues with null: assuming that something isn’t null when it actually is.
 
-```rust
+```rust showLineNumbers title="find_haystack.rs" /Option<usize>/
 fn find(haystack: &str, needle: char) -> Option<usize> {
     for (index, c) in haystack.char_indices() {
         if c == needle {
