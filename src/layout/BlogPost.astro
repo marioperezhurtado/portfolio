@@ -15,8 +15,11 @@ const { title, description, pubDate, image } = Astro.props;
 >
   <main class="my-10">
     <article class="max-w-prose mx-auto">
-      <a href="/" class="mb-10 block w-fit underline hover:text-pf-accent
-      transition">← Back</a>
+      <a
+        href="/"
+        class="mb-10 block w-fit underline hover:text-pf-accent transition"
+        >← Back</a
+      >
       <h1
         class="mb-2 font-display text-pf-light font-extrabold text-2xl sm:text-3xl"
       >
@@ -131,8 +134,13 @@ const { title, description, pubDate, image } = Astro.props;
     #blog ul,
     #blog ol {
       padding-left: 1.5rem;
-      list-style: disc;
       margin-bottom: 2rem;
+    }
+    #blog ul {
+      list-style: disc;
+    }
+    #blog ol {
+      list-style: decimal;
     }
   </style>
 </RootLayout>
