@@ -30,7 +30,7 @@ signals. The [announcement](https://svelte.dev/blog/runes) of Svelte 5 with thei
 Signals represent a single value that changes over time. It is an **atomic reactive
 primitive** that updates its value when its *dependencies* change.
 
-Signals unlock *fine-grained reactivity*. The following examples will be using
+Signals unlock **fine-grained** reactivity. The following examples will be using
 [Solid.js](https://www.solidjs.com/), but the general concepts apply to any signal-based
 library.
 
@@ -64,7 +64,6 @@ function Counter() {
   setInterval(increment, 1000);
   console.log("I only log once");
 
-
   return <button onClick={increment}>{count()}</button>;
 }
 ```
@@ -80,8 +79,7 @@ const [count, setCount] = createSignal(0);
 function Counter() {...}
 ```
 
-Yes, it is that simple, move it out of the component. **State and component
-lifecycle are not tied together.** 
+Just move it out of the component. **State and component lifecycle are not tied together.** 
 
 How would we produce a *side effect* when the count changes?
 
@@ -100,7 +98,7 @@ function Counter() {
 
 **No dependency arrays**. Components **only ever run once**, so there is no need to specify dependencies. The *effect* will run every time the count changes, and only then.
 
-This might seem like some kind of magic, maybe a compiler trick, but **it
+This might seem like some kind of *magic*, maybe a compiler trick, but **it
 is not**. The concept is actually quite simple. Let's build our own (naive) implementation of a *signal-based* library.
 
 
@@ -281,14 +279,15 @@ update their values using effects:
 ```js title="index.js" /h1.textContent = count()/
 const [count, setCount] = createSignal(0);
 
-const h1 = document.createElement('h1');
+const h1 = document.createElement("h1");
 
 createEffect(() => h1.textContent = count());
 
-document.body.appendChild(element);
+const button = document.createElement("button");
+button.textContent = "Click me!";
+button.addEventListener("click", () => setCount(count() + 1));
 
-setCount(count() + 1);
-setCount(count() + 1);
+document.body.append(h1, button);
 ```
 
 The basics of our **signal-based** reactive system are there. But now we could make it
@@ -457,12 +456,12 @@ function createElement(tag, props, ...children) {
   children.flat().forEach((child) => {
     const node = isTextNode(child) ? document.createTextNode(child) : child;
 
-    if (typeof child === 'function') {
+    if (typeof child === "function") {
       createEffect(() => createExpression(element, child));
     }
     // ...
   });
-  /...
+  //...
 }
 ``` 
 
@@ -578,7 +577,7 @@ You can find the code for this example
 ## Other Resources
 
 This article is **heavily** inspired by the great work of [Ryan
-Carniato](https://twitter.com/ryansolid) and the [Solid](https://www.solidjs.com/)
+Carniato](https://twitter.com/RyanCarniato) and the [Solid](https://www.solidjs.com/)
 team. I also recommend you to check out the following resources:
 
 - [Revolutionary Signals](https://youtu.be/Jp7QBjY5K34)
