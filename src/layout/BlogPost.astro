@@ -1,6 +1,7 @@
 ---
 import RootLayout from "./RootLayout.astro";
 import FormatedDate from "../components/FormattedDate.astro";
+import ReadingProgress from "../components/ReadingProgress.svelte";
 
 import type { CollectionEntry } from "astro:content";
 type Props = CollectionEntry<"blog">["data"];
@@ -13,6 +14,7 @@ const { title, description, pubDate, image } = Astro.props;
   description={description}
   image={`/blog/${image}`}
 >
+  <ReadingProgress client:idle/>
   <main class="my-10">
     <article class="max-w-prose mx-auto">
       <a
