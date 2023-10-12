@@ -145,11 +145,11 @@ And our **effect** function, wich will push itself onto the *stack*, run the
 ```js title="signals.js"
 function createEffect(callback) {
   const effect = () => {
-    stack.push(effect);
+    context.push(effect);
     try {
       callback();
     } finally {
-      stack.pop();
+      context.pop();
     }
   };
 
@@ -167,7 +167,7 @@ function createSignal(value) {
   const read = () => {
     const observer = getCurrentObserver();
     if (observer) {
-      subscriptions.add(observer);
+      subscribers.add(observer);
     }
     return value;
   };
@@ -186,14 +186,14 @@ function createSignal(value) {
   const read = () => {
     const observer = getCurrentObserver();
     if (observer) {
-      subscriptions.add(observer);
+      subscribers.add(observer);
     }
     return value;
   };
 
   const write = (newValue) => {
     value = newValue;
-    subscriptions.forEach((sub) => sub());
+    subscribers.forEach((sub) => sub());
   };
 
   return [read, write];
@@ -205,10 +205,10 @@ That's our very basic implementation of a **signal** and an **effect**.
 I will recap the code now:
 
 ```js title="signals.js"
-const stack = [];
+const context = [];
 
 function getCurrentObserver() {
-  return stack[stack.length - 1];
+  return context[context.length - 1];
 }
 
 function createSignal(value) {
@@ -218,7 +218,7 @@ function createSignal(value) {
     // 5.
     const observer = getCurrentObserver();
     if (observer) {
-      subscriptions.add(observer);
+      subscribers.add(observer);
     }
     return value;
   };
@@ -226,7 +226,7 @@ function createSignal(value) {
   const write = (newValue) => {
     // 7.
     value = newValue;
-    subscriptions.forEach(() => observer());
+    subscribers.forEach((sub) => sub());
   };
 
   return [read, write];
@@ -235,12 +235,12 @@ function createSignal(value) {
 function createEffect(callback) {
   const effect = () => {
     // 3.
-    stack.push(effect);
+    context.push(effect);
     try {
       // 4.
       callback();
     } finally {
-      stack.pop();
+      context.pop();
     }
   };
 
@@ -291,8 +291,8 @@ document.body.append(h1, button);
 ```
 
 The basics of our **signal-based** reactive system are there. But now we could make it
-easier to use, so we don't have to manually create elements and update their
-values. Let's use **JSX**. Our final result should look like this:
+easier to use, so that we don't have to manually create elements and update their
+values imperatively. Let's use **JSX**. Our final result should look like this:
 
 ```jsx
 function Counter(props) {
@@ -317,9 +317,8 @@ Doesn't that look *familiar*? I am sure it does.
 If you **only** wanted to know about what **signals** are, and how they work, you can
 stop reading here. The rest of the article will just explain how to implement
 the **JSX** transpiling, so you can see how it works under the hood, and how we actually
-have achieved a (very) basic version of a **VDOM-less, signal-based UI library**.
-
-If not, let's continue.
+have achieved a (very) basic version of a **VDOM-less, signal-based UI
+library**. If that is not the case, let's continue.
 
 ## Using JSX
 
@@ -357,7 +356,7 @@ I will `npm init` a new project, and install the following dependencies:
 npm install @babel/core @babel/cli @babel/plugin-transform-react-jsx
 ```
 
-I've named this example library `Junk`, and I'm sure you know why. Anyway, let's
+I've named this example library *“Junk”*, and I'm sure you know why. Anyway, let's
 change the babel configuration, to use the `plugin-transform-react-jsx` with our
 custom `createElement` function:
 
@@ -569,7 +568,7 @@ flawed and incomplete, I think it is a good example to learn about **signals**,
 under the hood, in a practical way.
 
 Signals are a really interesting concept that I am really excited about, and I
-want to keep learning more about this topic. I hope you enjoyed this article, learned something new, and most importantly, **had fun!**
+will keep learning more about this topic. I hope you enjoyed this article, learned something new, and most importantly, **had fun!**
 
 You can find the code for this example
 [here](https://github.com/marioperezhurtado/junk).
