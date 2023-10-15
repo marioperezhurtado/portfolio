@@ -50,14 +50,13 @@ const planets = [
 ];
 ---
 
-<div class="relative flex justify-center items-center w-[200px] h-[200px]">
+<div class="flex relative justify-center items-center w-[200px] h-[200px]">
   {planets.map((planet) => <Planet {...planet} />)}
   <img
     src="/planets/sun.webp"
     alt="sun"
     id="sun"
-    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8
-    rounded-full pointer-events-none"
+    class="absolute top-1/2 left-1/2 w-8 h-8 rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none"
   />
 </div>
 

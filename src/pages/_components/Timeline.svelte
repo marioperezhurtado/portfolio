@@ -34,20 +34,20 @@
 <svelte:window on:scroll={handleScroll} />
 
 <div
-  class="mt-10 flex h-fit relative overflow-hidden pl-1"
+  class="flex overflow-hidden relative pl-1 mt-10 h-fit"
   bind:this={timeline}
 >
   <span class="min-w-[2px] bg-pf-dark-3" />
   <span
     id="timeline"
-    class="min-w-[2px] absolute left-1 h-full"
+    class="absolute left-1 h-full min-w-[2px]"
     style="top: {-position}px"
   />
-  <ol class="relative bg-pf-dark max-w-prose flex flex-col gap-10">
+  <ol class="flex relative flex-col gap-10 max-w-prose bg-pf-dark">
     {#each timelineItems as { year, title, description }}
       <li class="ml-4">
         <div
-          class="absolute w-3.5 h-3.5 bg-pf-dark-3 rounded-full mt-1.5 -left-2 border-2 border-pf-dark"
+          class="absolute -left-2 mt-1.5 w-3.5 h-3.5 rounded-full border-2 bg-pf-dark-3 border-pf-dark"
         />
 
         <time

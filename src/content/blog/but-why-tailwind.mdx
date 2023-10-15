@@ -70,14 +70,14 @@ Utility classes help you work within the constraints of a system instead of litt
 In practice, a component using tailwind, with your framework of choice, would look similar to this:
 
 ```html showLineNumbers title="Component.svelte"
-<article class="bg-gray-700 shadow-md rounded-lg p-4 max-w-sm mx-auto my-10">
+<article class="p-4 my-10 mx-auto max-w-sm bg-gray-700 rounded-lg shadow-md">
   <img
     src="https://fakeimg.pl/300x150"
     alt="Placeholder"
-    class="w-full aspect-video object-cover rounded-md" />
-  <h2 class="text-lg text-white font-bold my-5">But Why Tailwind, Though?</h2>
+    class="object-cover w-full rounded-md aspect-video" />
+  <h2 class="my-5 text-lg font-bold text-white">But Why Tailwind, Though?</h2>
   <div
-    class="flex justify-between pt-2 border-t text-gray-300 border-gray-500 text-sm">
+    class="flex justify-between pt-2 text-sm text-gray-300 border-t border-gray-500">
     <time datetime="2023-08-14">Aug 14 2023</time>
     <span>Mario Perez Hurtado</span>
   </div>

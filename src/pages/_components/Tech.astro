@@ -24,33 +24,32 @@ const toolItems = [
 
 <section class="mb-16 sm:mb-28">
   <h2
-    class="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4 font-display text-pf-light"
+    class="mb-2 text-2xl font-bold sm:mb-4 sm:text-3xl font-display text-pf-light"
   >
     Tools of the trade
   </h2>
-  <div class="text-pf-light-2 sm:text-lg">
+  <div class="sm:text-lg text-pf-light-2">
     <p class="mb-5">
       Your tools are a reflection of your commitment to your craft. 🛠️
     </p>
-    <p class="max-w-prose mb-5">
+    <p class="mb-5 max-w-prose">
       Here are some of the technologies I use to build websites and web apps.
       However, I approach my learning with an <Highlighted text="open mind" /> and
       am always looking to learn new things and keep improving my skills.
     </p>
     <blockquote
-      class="text-base border-l-4 bg-pf-dark-2 rounded-sm p-2 pr-3 border-pf-dark-3 w-fit italic"
+      class="p-2 pr-3 text-base italic rounded-sm border-l-4 bg-pf-dark-2 border-pf-dark-3 w-fit"
     >
       "Strong opinions, loosely held."
     </blockquote>
   </div>
   <ul
-    class="mt-10 flex gap-6 items-center overflow-x-auto sm:grid sm:grid-cols-2 pb-6 sm:gap-4 sm:max-w-xl md:grid-cols-3 md:max-w-4xl"
+    class="flex overflow-x-auto gap-6 items-center pb-6 mt-10 sm:grid sm:grid-cols-2 sm:gap-4 sm:max-w-xl md:grid-cols-3 md:max-w-4xl"
   >
     {
       toolItems.map(({ title, tools }) => (
         <li
-          class="bg-pf-dark-2 h-40 sm:h-full aspect-video p-4 flex flex-col
-      justify-between rounded-md shadow-md sm:aspect-auto gap-4"
+          class="flex flex-col gap-4 justify-between p-4 h-40 rounded-md shadow-md sm:h-full bg-pf-dark-2 aspect-video sm:aspect-auto"
         >
           <h3 class="font-semibold text-pf-light">{title}</h3>
           <p>

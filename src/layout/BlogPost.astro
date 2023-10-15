@@ -16,21 +16,21 @@ const { title, description, pubDate, image } = Astro.props;
 >
   <ReadingProgress client:idle/>
   <main class="my-10">
-    <article class="max-w-prose mx-auto">
+    <article class="mx-auto max-w-prose">
       <a
         href="/"
-        class="mb-10 block w-fit underline hover:text-pf-accent transition"
+        class="block mb-10 underline transition w-fit hover:text-pf-accent"
         >← Back</a
       >
       <h1
-        class="mb-2 font-display text-pf-light font-extrabold text-2xl sm:text-3xl"
+        class="mb-2 text-2xl font-extrabold sm:text-3xl font-display text-pf-light"
       >
         {title}
       </h1>
       <span class="text-sm">
         <FormatedDate date={pubDate} />
       </span>
-      <hr class="h-px mt-4 mb-8 bg-pf-dark-3 border-0" />
+      <hr class="mt-4 mb-8 h-px border-0 bg-pf-dark-3" />
       <div id="blog">
         <slot />
       </div>

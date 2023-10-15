@@ -9,20 +9,20 @@ const posts = (await getCollection('blog')).sort(
 
 <section class="mb-16 sm:mb-28">
   <h2
-    class="text-2xl sm:text-3xl mb-2 sm:mb-4 font-bold font-display text-pf-light">
+    class="mb-2 text-2xl font-bold sm:mb-4 sm:text-3xl font-display text-pf-light">
     Blog Posts
   </h2>
   <p class="sm:text-lg">Sometimes I write about stuff I find interesting. 📝</p>
-  <ul class="mt-6 sm:mt-10 mb-5 sm:mb-8 flex flex-col gap-5">
+  <ul class="flex flex-col gap-5 mt-6 mb-5 sm:mt-10 sm:mb-8">
     {
       posts.map((post) => (
         <li class="max-w-screen-sm">
           <a
             href={`/blog/${post.slug}`}
-            class="text-lg sm:text-xl text-pf-light font-semibold underline underline-offset-4 decoration-2 decoration-pf-dark-3 hover:decoration-pf-light-2 transition">
+            class="text-lg font-semibold underline transition sm:text-xl text-pf-light underline-offset-4 decoration-2 decoration-pf-dark-3 hover:decoration-pf-light-2">
             {post.data.title}
           </a>
-          <p class="text-sm mt-1 mb-2">
+          <p class="mt-1 mb-2 text-sm">
             <FormattedDate date={post.data.pubDate} />
           </p>
           <p class="max-w-prose">{post.data.description}</p>

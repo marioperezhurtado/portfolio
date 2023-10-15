@@ -14,7 +14,7 @@
 <svelte:window on:scroll={handleScroll}/>
 
 <div class="fixed top-0 left-0 w-screen">
-  <span class="bg-pf-dark-3 h-2 absolute top-0 rounded-r-sm" 
+  <span class="absolute top-0 h-2 rounded-r-sm bg-pf-dark-3" 
     style="width: {progress}%;"
   />
 </div>

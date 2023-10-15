@@ -17,7 +17,7 @@ const { arrow = false, ...props } = Astro.props
   <slot />
   {
     arrow && (
-      <span class="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition">
+      <span class="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
         <TopRightIcon />
       </span>
     )

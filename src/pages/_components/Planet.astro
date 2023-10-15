@@ -15,13 +15,13 @@ const startingOrbit = Math.random() * 360;
 ---
 
 <div
-  class="orbit absolute border-2 border-pf-dark-2 rounded-full pointer-events-none"
+  class="absolute rounded-full border-2 pointer-events-none orbit border-pf-dark-2"
 >
   <a
     href={url}
     target="_blank"
     rel="noopener noreferrer"
-    class="planet absolute rounded-full pointer-events-auto"
+    class="absolute rounded-full pointer-events-auto planet"
   >
     <img src={image} alt={name} class="rounded-full" width={size} height={size}/>
   </a>
