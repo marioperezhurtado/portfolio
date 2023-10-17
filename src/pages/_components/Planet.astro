@@ -1,61 +1,40 @@
 ---
 interface Props {
-  name: string;
-  image: string;
-  url: string;
-  rotationSpeed: number;
-  orbitSpeed: number;
+  speed: number;
+  color: string;
   size: number;
   orbitSize: number;
 }
-
-const { name, image, url, rotationSpeed, orbitSpeed, size, orbitSize } = Astro.props;
-
-const startingOrbit = Math.random() * 360;
+const { speed, color, size, orbitSize } = Astro.props;
+const startingRotation = Math.random() * 360;
 ---
 
-<div
-  class="absolute rounded-full border-2 pointer-events-none orbit border-pf-dark-2"
->
-  <a
-    href={url}
-    target="_blank"
-    rel="noopener noreferrer"
-    class="absolute rounded-full pointer-events-auto planet"
-  >
-    <img src={image} alt={name} class="rounded-full" width={size} height={size}/>
-  </a>
+<div id="orbit" class="absolute border-2 border-pf-dark-2 rounded-full">
+  <div id="planet" class="absolute rounded-full"></div>
 </div>
 
-<style
-  define:vars={{ rotationSpeed, orbitSpeed, size, orbitSize, startingOrbit }}
->
-  .planet {
+<style define:vars={{ speed, color, size, orbitSize, startingRotation }}>
+  #planet {
+    background-color: var(--color);
     top: calc((var(--orbitSize) / 3.6 - var(--size)) / 2 * 1px);
     left: calc((var(--orbitSize) / 3.6 - var(--size)) / 2 * 1px);
     width: calc(var(--size) * 1px);
     height: calc(var(--size) * 1px);
-    animation: spin calc(var(--rotationSpeed) * 1s) linear infinite;
   }
 
-  .orbit {
+  #orbit {
     width: calc(var(--orbitSize) * 1px);
     height: calc(var(--orbitSize) * 1px);
-    animation: orbit calc(var(--orbitSpeed) * 1s) linear infinite;
+    animation: orbit linear infinite;
+    animation-duration: calc(var(--speed) * 1s);
   }
 
   @keyframes orbit {
     from {
-      transform: rotate(calc(var(--startingOrbit) * 1deg));
+      transform: rotate(calc(var(--startingRotation) * 1deg));
     }
     to {
-      transform: rotate(calc(var(--startingOrbit) * 1deg + 360deg));
-    }
-  }
-
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
+      transform: rotate(calc(var(--startingRotation) * 1deg + 360deg));
     }
   }
 </style>

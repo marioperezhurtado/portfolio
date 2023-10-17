@@ -1,63 +1,55 @@
 ---
 import Planet from "./Planet.astro";
-
 const planets = [
   {
-    name: "Hourglass Twins",
-    image: "/planets/hourglass-twins.webp",
-    url: "https://outerwilds.fandom.com/wiki/Hourglass_Twins",
-    orbitSpeed: 20,
-    rotationSpeed: 4,
-    size: 12,
+    color: "#D74D1F",
+    speed: 20,
+    size: 8,
     orbitSize: 60,
   },
   {
-    name: "Timber Hearth",
-    image: "/planets/timber-hearth.webp",
-    url: "https://outerwilds.fandom.com/wiki/Timber_Hearth",
-    orbitSpeed: 30,
-    rotationSpeed: 3,
+    color: "#07A1B6",
+    speed: 30,
     size: 12,
     orbitSize: 90,
   },
   {
-    name: "Brittle Hollow",
-    image: "/planets/brittle-hollow.webp",
-    url: "https://outerwilds.fandom.com/wiki/Brittle_Hollow",
-    orbitSpeed: 40,
-    rotationSpeed: 8,
-    size: 15,
+    color: "#665269",
+    speed: 40,
+    size: 16,
     orbitSize: 120,
   },
   {
-    name: "Giant's Deep",
-    image: "/planets/giants-deep.webp",
-    url: "https://outerwilds.fandom.com/wiki/Giant%27s_Deep",
-    orbitSpeed: 100,
-    rotationSpeed: 12,
+    color: "#047168",
+    speed: 60,
     size: 20,
     orbitSize: 160,
   },
   {
-    name: "Dark Bramble",
-    image: "/planets/dark-bramble.webp",
-    url: "https://outerwilds.fandom.com/wiki/Dark_Bramble",
-    orbitSpeed: 80,
-    rotationSpeed: 18,
-    size: 17,
+    color: "#697788",
+    speed: 70,
+    size: 16,
     orbitSize: 200,
   },
 ];
 ---
 
-<div class="flex relative justify-center items-center w-[200px] h-[200px]">
-  {planets.map((planet) => <Planet {...planet} />)}
-  <img
-    src="/planets/sun.webp"
-    alt="sun"
+<div class="relative flex justify-center items-center w-[200px] h-[200px]">
+  {
+    planets.map((planet) => (
+      <Planet
+        color={planet.color}
+        speed={planet.speed}
+        size={planet.size}
+        orbitSize={planet.orbitSize}
+      />
+    ))
+  }
+  <div
     id="sun"
-    class="absolute top-1/2 left-1/2 w-8 h-8 rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-  />
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-orange-300 rounded-full"
+  >
+  </div>
 </div>
 
 <style>

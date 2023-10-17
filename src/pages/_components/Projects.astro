@@ -22,18 +22,23 @@ const projects = [
     description: "Local-first web code editor.",
     url: "https://code.marioph.com",
   },
+  {
+    title: "Crappy 98",
+    description: "A nostalgic trip back in time.",
+    url: "https://retro.marioph.com",
+  },
 ];
 ---
 
 <section class="mb-16 sm:mb-28">
   <h2
-    class="mb-2 text-2xl font-bold sm:mb-4 sm:text-3xl font-display text-pf-light"
+    class="mb-4 text-2xl font-bold font-display text-pf-light"
   >
     I like building things
   </h2>
-  <p class="sm:text-lg">The best way to learn is by doing. 👨‍💻</p>
+  <p>The best way to learn is by doing. 👨‍💻</p>
   <ul
-    class="grid gap-5 mt-6 mb-5 max-w-screen-md sm:gap-10 sm:mt-10 sm:mb-8 md:grid-cols-3 xs:grid-cols-2"
+    class="grid gap-4 mt-6 mb-5 max-w-screen-md sm:gap-10 sm:mt-10 sm:mb-8 md:grid-cols-3 xs:grid-cols-2"
   >
     {
       projects.map(({ title, description, url }) => (

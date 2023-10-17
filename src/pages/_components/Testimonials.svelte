@@ -63,10 +63,10 @@
         fill="currentColor"
       />
     </svg>
-    <h3 class="mt-2 mb-5 text-lg font-bold text-pf-light">
+    <h3 class="mt-2 mb-1 text-lg font-bold text-pf-light">
       {testimonial.title}
     </h3>
-    <p>
+    <p class="max-w-lg">
       {testimonial.quote}
     </p>
   </div>

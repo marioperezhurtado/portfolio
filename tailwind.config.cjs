@@ -15,7 +15,7 @@ module.exports = {
         'pf-accent': '#16ca73'
       },
       fontFamily: {
-        display: ['Syne', ...defaultTheme.fontFamily.sans],
+        display: ['Montserrat', ...defaultTheme.fontFamily.sans],
         body: ['Inter', ...defaultTheme.fontFamily.sans]
       },
       screens: {

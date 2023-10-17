@@ -10,9 +10,10 @@ const { arrow = false, ...props } = Astro.props
 ---
 
 <a
-  class={`pt-2 group pb-1.5 flex items-center gap-2 px-3 text-sm bg-pf-dark-2 rounded-md hover:bg-pf-dark-3 text-pf-light-2 w-fit transition shadow-md font-semibold ${
-    arrow ? 'pr-2' : ''
-  } ${props.class}`}
+  class={`pt-2 group pb-1.5 flex items-center gap-2 px-3 text-sm bg-pf-dark-2
+  rounded-md text-pf-light-2 w-fit transition shadow-md
+  font-semibold border-t border-pf-dark-3 hover:brightness-110
+  ${arrow ? 'pr-2' : ''} ${props.class}`}
   {...props}>
   <slot />
   {

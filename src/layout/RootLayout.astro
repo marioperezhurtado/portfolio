@@ -46,6 +46,12 @@ const {
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   </head>
   <body
     class="overflow-x-hidden min-h-screen bg-pf-dark text-pf-light-2 font-body">
@@ -54,9 +60,6 @@ const {
       <Footer />
     </div>
     <style is:global>
-      @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700&display=swap');
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
       /* remove tap highlight on mobile */
       * {
         -webkit-tap-highlight-color: transparent;

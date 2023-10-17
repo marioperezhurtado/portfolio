@@ -9,10 +9,10 @@ const posts = (await getCollection('blog')).sort(
 
 <section class="mb-16 sm:mb-28">
   <h2
-    class="mb-2 text-2xl font-bold sm:mb-4 sm:text-3xl font-display text-pf-light">
+    class="mb-4 text-2xl font-bold font-display text-pf-light">
     Blog Posts
   </h2>
-  <p class="sm:text-lg">Sometimes I write about stuff I find interesting. 📝</p>
+  <p>Sometimes I write about stuff I find interesting. 📝</p>
   <ul class="flex flex-col gap-5 mt-6 mb-5 sm:mt-10 sm:mb-8">
     {
       posts.map((post) => (
@@ -25,7 +25,7 @@ const posts = (await getCollection('blog')).sort(
           <p class="mt-1 mb-2 text-sm">
             <FormattedDate date={post.data.pubDate} />
           </p>
-          <p class="max-w-prose">{post.data.description}</p>
+          <p class="max-w-xl">{post.data.description}</p>
         </li>
       ))
     }

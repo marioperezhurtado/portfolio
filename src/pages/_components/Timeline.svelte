@@ -1,33 +1,31 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
-
   const timelineItems = [
     {
       year: 2020,
-      title: 'Technician in Microcomputer Systems and Networks',
+      title: "Technician in Microcomputer Systems and Networks",
       description:
-        'Learned about computer hardware, software, networks and operating systems. Developed problem-solving and soft skills.'
+        "Learned about computer hardware, software, networks and operating systems. Developed problem-solving and soft skills.",
     },
     {
       year: 2022,
-      title: 'Higher Technician in Web Application Development',
+      title: "Higher Technician in Web Application Development",
       description:
-        'Learned web develpment, databases, deployments and project management. Built multiple personal projects in a variety of technologies, learning in a hands-on way.'
+        "Learned web develpment, databases, deployments and project management. Built multiple personal projects in a variety of technologies, learning in a hands-on way.",
     },
     {
       year: 2023,
-      title: 'Freelance Web Developer',
+      title: "Freelance Web Developer",
       description:
-        'Developed web and mobile applications for local businesses. Increased online visibility, improved user experience and helped to automate processes, saving time and costs.'
-    }
-  ]
+        "Developed web and applications for local businesses. Increased online visibility, improved user experience and helped to automate processes.",
+    },
+  ];
 
-  let position = 0
-  let timeline: HTMLDivElement
+  let position = 0;
+  let timeline: HTMLDivElement;
 
   function handleScroll() {
-    const new_position = timeline.getBoundingClientRect().top
-    position = new_position > 0 ? new_position : 0
+    const new_position = timeline.getBoundingClientRect().top;
+    position = new_position > 0 ? new_position : 0;
   }
 </script>
 
@@ -56,10 +54,10 @@
         >
           {year}
         </time>
-        <h3 class="text-lg font-semibold text-pf-light">
+        <h3 class="mb-1 text-lg font-semibold text-pf-light">
           {title}
         </h3>
-        <p>
+        <p class="max-w-xl"> 
           {description}
         </p>
       </li>
