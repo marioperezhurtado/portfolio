@@ -25,9 +25,7 @@ Yes, the browser already knows how to send data to the server and render the new
 page. If you are using any modern JavaScript framework, you probably forgot **how
 forms work**.
 
-With modern JavaScript frameworks, we intercept the form submission, prevent the
-browser's default behaviour, and use the `fetch` API to send the form data to the server.
-Then, we use the response to update the DOM using JavaScript.
+With modern JavaScript frameworks, sometimes we intercept the form submission, prevent the browser's default behaviour, and use the `fetch` API to send the form data to the server. Then, we use the response to update the DOM using JavaScript.
 
 ```tsx showLineNumbers title="Todos.tsx" /preventDefault()/ /onSubmit/ 
 export default function Todos() {
@@ -63,9 +61,7 @@ later*) – then he would not be able to use our application.
 
 If your website is a single-page application, and it is not being server-side rendered, that user will not be able to see the content of your website.
 
-That's why I think *progressive enhancement* is so important. The very basic
-functionality of your website **should be available** to everyone, regardless of
-their device, browser, or internet connection.
+That's why *progressive enhancement* matters. The very basic functionality of your website **should be available** to everyone, regardless of their device, browser, or internet connection.
 
 This users will not have the best experience, but at least they will be able to
 *use your website*.
@@ -104,21 +100,19 @@ Well, [not really](https://www.kryogenix.org/code/browser/everyonehasjs.html). T
 - Some users have a slow connection.
 
 
-This concept of *progressive enhancement* might sound strange to you, but it's
-actually how the web was designed to work, and you might be using it without
-even knowing it.
+This concept of *progressive enhancement* it's actually how the web was meant to work, and you might be using it without even knowing it.
 
 
 ## You Are Already Using Progressive Enhancement
 
 If you are using any JavaScript framework like [Next](https://nextjs.org/),
-[Remix](https://remix.run/) or [Nuxt](https://nuxt.com/), you are probably using *progressive enhancement*.
+[Remix](https://remix.run/) or [Nuxt](https://nuxt.com/), you are already using *progressive enhancement*.
 
 Components like Next's or Remix's `<Link>` will work like a regular `<a>`
 element while JavaScript is not loaded, and will be enhanced when JavaScript is
 loaded.
 
-- While there is no JavaScript, it will work just like a regular link, triggering a full
+- While there is no JavaScript, it works just like a regular link, triggering a full
 page reload to show the new HTML page.
 
 - But then, when JavaScript loads, this component will intercept the click event, fetch the new page, update the DOM, and change the URL without refreshing the page.
@@ -133,19 +127,15 @@ You might think this is a rare case, that only a few users will notice. Is it re
 
 ## Progressive Enhancement And Accessibility
 
-My take here, is that you should think about *progressive enhancement* very
-similarly to how you think about *accessibility*.
+We should think about *progressive enhancement* similarly to how we think about *accessibility*.
 
-We live in a world where building products that provide **value** is the top
-priority, and if something doesn't, since it only affects a small percentage of
-users, spending time and effort on it is not worth it.
+Building products that provide **value** is the top priority, and if something doesn't, since it only affects a small percentage of users, spending time and effort on it is not worth it.
  
 But what if we had libraries and tools that help us make our sites accessible without
 much effort? Why wouldn't we use them?
 
 Libraries like [Radix UI](https://www.radix-ui.com/) or [Headless
-UI](https://headlessui.com/) are quite useful. They help us build fully accessible
-web apps without the hassle.
+UI](https://headlessui.com/) help us build fully accessible web apps without the hassle.
 
 ```tsx showLineNumbers title="MyAccessibleDropdown.tsx"
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
@@ -182,17 +172,16 @@ export default function MyAccessibleDropdown() {
 }
 ```
 
-This same concept can be used to think about *progressive enhancement*. If
-frameworks give us **good defaults**, and buil on top of the **web platform**,
-we can improve the resilience and availability of our applications, without having to change the way we develop.
+This same concept can be translated to *progressive enhancement*. If a framework
+gives us **good defaults**, and builds on top of the **web platform**, we can improve the resilience and availability of our applications, without having to change the way we develop.
 
 Let's see an example of how we can achieve this.
 
 
 ## A Real World Example
 
-In this example I will be using [SvelteKit](https://kit.svelte.dev/), but there are
-other frameworks that share similar patterns, like [Remix](https://remix.run).
+In this example I will be using [SvelteKit](https://kit.svelte.dev/), but there
+are lots of other frameworks that share similar patterns, like [Remix](https://remix.run).
 
 ```svelte showLineNumbers title="Todos.svelte" /create/
 <form method="POST" action="?/create">
@@ -251,7 +240,7 @@ reload. It will:
 
 - Render the nearest error page if an error occurs.
 
-And we can add things like **pending states**, **animations**, and **optimistic
+And we can add stuff like **pending states**, **animations**, and **optimistic
 UI**.
 
 ```svelte showLineNumbers title="Todos.svelte" {2,3,8,14-21,26,35-37}
@@ -311,9 +300,7 @@ nice framework, to build a resilient and accessible web application.
 ## Conclusion
 
 This fancy term of *progressive enhancement* is not new, it's just how the web was
-designed to work. I think we should take advantage of the web platform and build
-on top of it, with the help of frameworks and libraries that give us the right tools
-to do so.
+meant to work. We should take advantage of the web platform and build on top of it, with the help of frameworks and libraries that give us the right tools to do so.
 
 
 ## Other Resources

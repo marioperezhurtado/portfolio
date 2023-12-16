@@ -1,32 +1,34 @@
 <script lang="ts">
   const testimonials = [
     {
-      fullName: 'Hamid Bchour',
-      description: 'Owner of Barbería HB',
-      title: 'Great design and support',
+      fullName: "Hamid Bchour",
+      description: "Owner of Barbería HB",
+      title: "Great design and support",
       quote:
-        'We have had multiple clients come to us thanks to our new website. The design is really good and he has been very attentive to the details that we have asked for.',
-      avatar: '/testimonials/hamid-bchour.webp'
+        "We have had multiple clients come to us thanks to our new website. He has been very attentive to the details that we have asked for.",
+      avatar: "/testimonials/hamid-bchour.webp",
     },
     {
-      fullName: 'Salvador Pérez',
-      description: 'My Dad 🤣',
-      title: 'He is a good guy',
-      quote: 'What do you want me to say? He is my son. 👍',
-      avatar: '/testimonials/salvador-perez.webp'
-    }
-  ]
+      fullName: "Javier Arbizu",
+      description: "CEO of Arbicuir, S.L.",
+      title: "Reliable and enthusiastic",
+      quote:
+        "He did a great job with our website. Always willing to help and explain everything in detail.",
+      avatar: "/testimonials/javier-arbizu.webp",
+    },
+  ];
 
-  let testimonial = testimonials[0] as (typeof testimonials)[number]
+  let testimonial = testimonials[0] as (typeof testimonials)[number];
 </script>
 
-<div class="flex flex-col gap-y-4 gap-x-14 mt-10 lg:flex-row">
-  <ul class="flex flex-row flex-wrap gap-4 lg:flex-col min-w-fit">
+<div class="flex flex-col gap-y-4 gap-x-14 mt-10 md:flex-row">
+  <ul class="flex flex-row flex-wrap gap-4 md:flex-col min-w-fit">
     {#each testimonials as t}
       <li>
         <button
           on:click={() => (testimonial = t)}
-          class="p-4 pr-8 w-full rounded-md transition hover:shadow-md hover:bg-pf-dark-2"
+          class="p-4 pr-8 w-full rounded-md transition hover:shadow-md
+          hover:bg-pf-dark-2"
           class:bg-pf-dark-2={testimonial === t}
           class:shadow-md={testimonial === t}
         >
@@ -35,8 +37,8 @@
               <img
                 src={t.avatar}
                 alt={t.fullName}
-                width="28"
-                height="28"
+                width="32"
+                height="32"
                 class="object-cover object-center aspect-square"
               />
             </div>
@@ -49,7 +51,7 @@
       </li>
     {/each}
   </ul>
-  <div class="pt-4 max-w-prose">
+  <div class="pt-4 max-w-md">
     <svg
       class="text-pf-dark-3"
       viewBox="0 0 24 27"
